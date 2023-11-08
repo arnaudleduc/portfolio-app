@@ -1,5 +1,4 @@
-import React, { useRef } from 'react'
-import { useGLTF, useTexture } from '@react-three/drei'
+import { useGLTF, useTexture, Stars } from '@react-three/drei'
 
 export default function MeshGroup4(props) {
     const { nodes } = useGLTF('models/mesh4.glb')

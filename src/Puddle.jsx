@@ -6,18 +6,8 @@ export default function Puddle(props) {
 
     return (
         <group {...props} dispose={null}>
-            {/* <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.puddle.geometry}
-                position={nodes.puddle.position}
-            >
-                <MeshReflectorMaterial
-                    envMapIntensity={true}
-                />
-            </mesh> */}
-            <mesh rotation-x={-Math.PI*0.5} position={[-1, 0.15, 0]} castShadow receiveShadow>
-                <planeGeometry args={[3, 2]}/>
+            <mesh rotation-x={-Math.PI*0.5} position={[-0.5, 0.15, 0]} castShadow receiveShadow>
+                <planeGeometry args={[3, 3]}/>
                 <MeshReflectorMaterial
                     envMapIntensity={1}
                     color={[0.015, 0.015, 0.015]}
