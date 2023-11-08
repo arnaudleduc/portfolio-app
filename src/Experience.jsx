@@ -1,7 +1,7 @@
+import MeshGroup1 from './MeshGroup1'
+
 export default function Experience() {
-    return <>
-        <mesh>
-            <boxGeometry />
-        </mesh>
-    </>
+    return (
+        <MeshGroup1 />
+    )
 }
