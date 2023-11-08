@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 
-export default function MeshGroup1(props) {
-    const { nodes } = useGLTF('models/mesh1.glb')
-    const bakedTexture = useTexture('textures/bakedMesh1.jpg')
+export default function MeshGroup2(props) {
+    const { nodes } = useGLTF('models/mesh2.glb')
+    const bakedTexture = useTexture('textures/bakedMesh2.jpg')
     bakedTexture.flipY = false
 
     return (
@@ -11,10 +11,9 @@ export default function MeshGroup1(props) {
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.boardZDK.geometry}
-                // position={[-1.385, 8.431, -0.999]}
-                position={nodes.boardZDK.position}
-            >
+                geometry={nodes.buildings.geometry}
+                position={nodes.buildings.position}
+                >
                 <meshStandardMaterial
                     map={bakedTexture}
                     toneMapped={false}
@@ -24,4 +23,4 @@ export default function MeshGroup1(props) {
     )
 }
 
-useGLTF.preload('models/mesh1.glb')
+useGLTF.preload('models/mesh2.glb')

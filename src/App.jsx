@@ -1,19 +1,27 @@
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience'
 import { Environment, OrbitControls } from '@react-three/drei'
+import { Perf } from 'r3f-perf'
 
 export default function App() {
     return (
         <Canvas
             camera={{
-                fov: 45,
+                fov: 15,
                 near: 0.1,
-                far: 200,
-                position: [- 4, 3, 6]
+                far: 500,
+                position: [-32, 26, 32]
             }}
         >
             {/* Controls */}
-            <OrbitControls />
+            <OrbitControls 
+                target={[0, 4.3, 0]}
+                // enablePan={false}
+                // enableZoom={false}
+            />
+            <Perf 
+                position='top-left'
+            />
 
             {/* Scene Set up */}
             <Environment
@@ -28,7 +36,7 @@ export default function App() {
                 ]}
                 blur={0.8}
             />
-            <ambientLight intensity={5}/>
+            <ambientLight intensity={0.6}/>
 
             {/* Scene */}
             <Experience />
