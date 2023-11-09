@@ -14,7 +14,7 @@ export default function BoardZDK(props) {
                 <meshStandardMaterial
                     color={'white'}
                     emissive="white"
-                    emissiveIntensity={5}
+                    emissiveIntensity={4.724}
                     toneMapped={false}
                 />
             </mesh>
