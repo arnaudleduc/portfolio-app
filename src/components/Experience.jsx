@@ -1,4 +1,4 @@
-import { Bloom, EffectComposer } from "@react-three/postprocessing"
+import { Bloom, EffectComposer, DepthOfField } from "@react-three/postprocessing"
 
 import MeshGroup1 from './MeshGroup1'
 import MeshGroup2 from './MeshGroup2'
