@@ -7,7 +7,6 @@ export default function MeshGroup3(props) {
 
     const { nodes } = useGLTF('models/mesh3.glb')
     const blades = useGLTF('/models/bladesClim.glb')
-    // const bladeGeometry = blades.nodes.
 
     const { actions } = useAnimations(blades.animations, bladesGroup)
     

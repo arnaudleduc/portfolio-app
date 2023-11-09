@@ -12,6 +12,7 @@ import NeonArcade from "./NeonArcade"
 import NeonMuseum from "./NeonMuseum"
 import NeonMuseumArrows from "./NeonMuseumArrows"
 import Puddle from "./Puddle"
+import Sparkles from "./Sparkles"
 
 export default function Experience() {
     // Debug
@@ -43,6 +44,7 @@ export default function Experience() {
             <MeshGroup3 />
             <MeshGroup4 />
             <Puddle />
+            <Sparkles />
         </>
 
     )
