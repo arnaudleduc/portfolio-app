@@ -6,6 +6,6 @@ body,
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(82, 65, 108);
-    background: linear-gradient(90deg, rgba(82, 65, 108, 1) 0%, rgba(54, 54, 98, 1) 100%);
+    background: rgb(65, 32, 47);
+    background: linear-gradient(90deg, rgba(45, 59, 79, 0.4) 0%, rgba(81, 19, 36, 0.4) 100%);
 }

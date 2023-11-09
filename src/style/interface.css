@@ -1,0 +1,21 @@
+.interface-sound {
+    position: absolute;
+    bottom: 3%;
+    right: 1%;
+    border: 1px solid #fc8914;
+    border-radius: 50%;
+    pointer-events: auto;
+    cursor: pointer;
+    user-select: none;
+    @media screen and (max-width: 767px) {
+        right: 5%;
+    }
+}
+
+.interface-sound-icon {
+    height: 30px;
+    margin: 10px;
+    @media screen and (max-width: 767px) {
+        height: 20px;
+    }
+}
