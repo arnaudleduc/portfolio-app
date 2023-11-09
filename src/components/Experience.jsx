@@ -1,5 +1,4 @@
 import { Bloom, EffectComposer } from "@react-three/postprocessing"
-import { useControls } from "leva"
 
 import MeshGroup1 from './MeshGroup1'
 import MeshGroup2 from './MeshGroup2'
@@ -13,24 +12,17 @@ import NeonMuseum from "./NeonMuseum"
 import NeonMuseumArrows from "./NeonMuseumArrows"
 import Puddle from "./Puddle"
 import Sparkles from "./Sparkles"
+import IFrame from "./IFrame"
 
 export default function Experience() {
-    // Debug
-    const { bloomIntensity, luminanceThreshold } = useControls({
-        bloomIntensity: 0.2,
-        luminanceThreshold: {
-            value: 5,
-            step: 1
-        }
-    })
 
     return (
         <>
             <EffectComposer>
                 <Bloom
                     mipmapBlur
-                    intensity={bloomIntensity}
-                    luminanceThreshold={luminanceThreshold}
+                    intensity={0.2}
+                    luminanceThreshold={5}
                 />
             </EffectComposer>
             <MeshGroup1 />
@@ -45,6 +37,7 @@ export default function Experience() {
             <MeshGroup4 />
             <Puddle />
             <Sparkles />
+            <IFrame />
         </>
 
     )

@@ -1,0 +1,9 @@
+.contact-page iframe {
+    width: 1180px;
+    height: 640px;
+    border: none;
+    user-select: none;
+    pointer-events: none;
+    background: rgb(82, 65, 108);
+    background: linear-gradient(90deg, rgba(82, 65, 108, 1) 0%, rgba(54, 54, 98, 1) 100%);
+}
