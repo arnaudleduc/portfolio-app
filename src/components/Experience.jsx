@@ -14,8 +14,10 @@ import Puddle from "./Puddle"
 import Sparkles from "./Sparkles"
 import IFrame from "./IFrame"
 
-export default function Experience() {
+import ParallaxEffect from "../utils/ParallaxEffect"
 
+
+export default function Experience() {
     return (
         <>
             <EffectComposer>
@@ -25,6 +27,7 @@ export default function Experience() {
                     luminanceThreshold={5}
                 />
             </EffectComposer>
+            <ParallaxEffect />
             <MeshGroup1 />
             <BoardZDK />
             <NeonArcade />

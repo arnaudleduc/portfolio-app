@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 const useSoundsStore = create((set) => ({
-    isSoundOn: true,
+    isSoundOn: false,
     toggleSounds: () => set((state) => ({
         isSoundOn: !state.isSoundOn
     }))

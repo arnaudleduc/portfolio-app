@@ -44,7 +44,6 @@ export default function App() {
                     maxAzimuthAngle={-((Math.PI) + 3.5)}
                     target={[0, 4.3, 0]}
                     enablePan={false}
-                // enableZoom={false}
                 />
                 <Perf
                     position='top-left'
