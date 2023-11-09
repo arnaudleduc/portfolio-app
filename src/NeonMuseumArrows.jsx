@@ -6,33 +6,38 @@ export default function NeonMuseumArrows(props) {
     const neonArrowsEmissiveIntensity = 40
 
     // Make the arrow blink
-    const [arrowPart1Lit, setArrowPart1Lit] = useState(true)
-    const [arrowPart2Lit, setArrowPart2Lit] = useState(true)
-    const [arrowPart3Lit, setArrowPart3Lit] = useState(true)
+    const [arrowPart1, setArrowPart1] = useState(false)
+    const [arrowPart2, setArrowPart2] = useState(false)
+    const [arrowPart3, setArrowPart3] = useState(false)
 
     useEffect(() => {
         // let delay = 1000
-        // const changeArrowPart1Status = () => {
-        //     setArrowPart1Lit(!arrowPart1Lit)
-        //     console.log('arrow1', arrowPart1Lit);
-        // }
-        // const changeArrowPart2Status = () => {
-        //     setArrowPart2Lit(!arrowPart2Lit)
-        //     console.log('arrow2', arrowPart2Lit);
-        // }
-        // const changeArrowPart3Status = () => {
-        //     setArrowPart3Lit(!arrowPart3Lit)
-        //     console.log('arrow3', arrowPart3Lit);
-        // }
-        // const functionArray = [changeArrowPart1Status, changeArrowPart2Status, changeArrowPart3Status]
-        // for(let i = 0; i < functionArray.length + 1; i++) {
-        //     let interval = delay + i;
-        //     (function (i, interval) {
-        //         setInterval(function() {
-        //             functionArray[i].call(this, interval)
-        //         }, interval)
-        //     }(i, interval))
-        // }
+        const changeArrowPart1Status = () => {
+            setArrowPart1(!arrowPart1)
+        }
+        const changeArrowPart2Status = () => {
+            setArrowPart2(!arrowPart2)
+        }
+        const changeArrowPart3Status = () => {
+            setArrowPart3(!arrowPart3)
+        }
+
+        if (!arrowPart1 && !arrowPart2 && !arrowPart3) {
+            setTimeout(changeArrowPart1Status, 1000)
+        }
+        if (arrowPart1 && !arrowPart2 && !arrowPart3) {
+            setTimeout(changeArrowPart2Status, 1000)
+        }
+        if (arrowPart1 && arrowPart2 && !arrowPart3) {
+            setTimeout(changeArrowPart3Status, 1000)
+        }
+        if (arrowPart1 && arrowPart2 && arrowPart3) {
+            setTimeout(() => {
+                changeArrowPart1Status()
+                changeArrowPart2Status()
+                changeArrowPart3Status()
+            }, 1000)
+        }
     })
 
     return (
@@ -46,7 +51,7 @@ export default function NeonMuseumArrows(props) {
                 <meshStandardMaterial
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
-                    emissiveIntensity={arrowPart1Lit ? neonArrowsEmissiveIntensity : 0}
+                    emissiveIntensity={arrowPart1 ? neonArrowsEmissiveIntensity : 0}
                     toneMapped={false}
                 />
             </mesh>
@@ -59,7 +64,7 @@ export default function NeonMuseumArrows(props) {
                 <meshStandardMaterial
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
-                    emissiveIntensity={arrowPart2Lit ? neonArrowsEmissiveIntensity : 0}
+                    emissiveIntensity={arrowPart2 ? neonArrowsEmissiveIntensity : 0}
                     toneMapped={false}
                 />
             </mesh>
@@ -72,7 +77,7 @@ export default function NeonMuseumArrows(props) {
                 <meshStandardMaterial
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
-                    emissiveIntensity={arrowPart3Lit ? neonArrowsEmissiveIntensity : 0}
+                    emissiveIntensity={arrowPart3 ? neonArrowsEmissiveIntensity : 0}
                     toneMapped={false}
                 />
             </mesh>
