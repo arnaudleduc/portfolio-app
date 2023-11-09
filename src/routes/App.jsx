@@ -66,7 +66,7 @@ export default function App() {
 
                 {/* Scene */}
                 <Suspense fallback={null}>
-                    <Experience />
+                    <Experience started={start}/>
                 </Suspense>
             </Canvas>
             <Interface />

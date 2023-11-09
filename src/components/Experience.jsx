@@ -17,7 +17,7 @@ import IFrame from "./IFrame"
 import ParallaxEffect from "../utils/ParallaxEffect"
 
 
-export default function Experience() {
+export default function Experience({ started }) {
     return (
         <>
             <EffectComposer>
@@ -40,7 +40,7 @@ export default function Experience() {
             <MeshGroup4 />
             <Puddle />
             <Sparkles />
-            <IFrame />
+            <IFrame started={started} />
         </>
 
     )
