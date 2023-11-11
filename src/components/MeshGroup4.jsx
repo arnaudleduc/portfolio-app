@@ -14,7 +14,7 @@ export default function MeshGroup4(props) {
                 material={nodes.electricPole.material}
                 position={nodes.electricPole.position}
             >
-                <meshStandardMaterial
+                <meshBasicMaterial
                     map={bakedTexture}                
                 />
             </mesh>

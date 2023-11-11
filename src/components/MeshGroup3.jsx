@@ -33,7 +33,7 @@ export default function MeshGroup3(props) {
                     geometry={nodes.bin.geometry}
                     position={nodes.bin.position}
                 >
-                    <meshStandardMaterial
+                    <meshBasicMaterial
                         map={bakedTexture}
                     />
                 </mesh>
@@ -51,7 +51,7 @@ export default function MeshGroup3(props) {
                         material={blades.nodes.airConditioner1Blades.material}
                         position={blades.nodes.airConditioner1Blades.position}
                     >
-                        <meshStandardMaterial
+                        <meshBasicMaterial
                             map={bakedBladesTexture}
                             toneMapped={false}
                         />
@@ -64,7 +64,7 @@ export default function MeshGroup3(props) {
                         material={blades.nodes.airConditioner2Blades.material}
                         position={blades.nodes.airConditioner2Blades.position}
                     >
-                        <meshStandardMaterial
+                        <meshBasicMaterial
                             map={bakedBladesTexture}
                             toneMapped={false}
                         />
@@ -77,7 +77,7 @@ export default function MeshGroup3(props) {
                         material={blades.nodes.airConditioner3Blades.material}
                         position={blades.nodes.airConditioner3Blades.position}
                     >
-                        <meshStandardMaterial
+                        <meshBasicMaterial
                             map={bakedBladesTexture}
                             toneMapped={false}
                         />
