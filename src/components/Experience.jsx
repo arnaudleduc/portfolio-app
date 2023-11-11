@@ -13,6 +13,7 @@ import NeonMuseumArrows from "./NeonMuseumArrows"
 import Puddle from "./Puddle"
 import Sparkles from "./Sparkles"
 import IFrame from "./IFrame"
+import PaintIcons from "./PaintIcons"
 
 import ParallaxEffect from "../utils/ParallaxEffect"
 
@@ -23,8 +24,8 @@ export default function Experience({ started }) {
             <EffectComposer>
                 <Bloom
                     mipmapBlur
-                    intensity={0.2}
-                    luminanceThreshold={5}
+                    intensity={0.1}
+                    luminanceThreshold={4}
                 />
             </EffectComposer>
             <ParallaxEffect />
@@ -41,6 +42,7 @@ export default function Experience({ started }) {
             <Puddle />
             {/* <Sparkles /> */}
             <IFrame started={started} />
+            <PaintIcons started={started} />
         </>
 
     )

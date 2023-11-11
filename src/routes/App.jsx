@@ -36,14 +36,14 @@ export default function App() {
             >
                 {/* Controls */}
                 <OrbitControls
-                    minDistance={40}
-                    maxDistance={50}
-                    minPolarAngle={(Math.PI / 2) - 1}
-                    maxPolarAngle={(Math.PI / 2) - 0.43}
-                    minAzimuthAngle={-((Math.PI) - 2.1)}
-                    maxAzimuthAngle={-((Math.PI) + 3.5)}
-                    target={[0, 4.3, 0]}
-                    enablePan={false}
+                    // minDistance={40}
+                    // maxDistance={50}
+                    // minPolarAngle={(Math.PI / 2) - 1}
+                    // maxPolarAngle={(Math.PI / 2) - 0.43}
+                    // minAzimuthAngle={-((Math.PI) - 2.1)}
+                    // maxAzimuthAngle={-((Math.PI) + 3.5)}
+                    // target={[0, 4.3, 0]}
+                    // enablePan={false}
                 />
                 <Perf
                     position='top-left'

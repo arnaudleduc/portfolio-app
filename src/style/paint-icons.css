@@ -1,0 +1,16 @@
+.paint-icons {
+    opacity: 0;
+}
+
+.paint-icons-visible {
+    opacity: 1;
+    transition: opacity 5s;
+}
+
+.icon-github {
+    width: 250px;
+}
+
+.icon-linkedin {
+    width: 250px;
+}
