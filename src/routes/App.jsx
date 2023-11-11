@@ -62,6 +62,7 @@ export default function App() {
                     ]}
                     blur={0.8}
                 />
+                <ambientLight intensity={0.6} />
 
                 {/* Scene */}
                 <Suspense fallback={null}>

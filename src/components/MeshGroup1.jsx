@@ -13,7 +13,7 @@ export default function MeshGroup1(props) {
                 // position={[-1.385, 8.431, -0.999]}
                 position={nodes.boardZDK.position}
             >
-                <meshBasicMaterial
+                <meshStandardMaterial
                     map={bakedTexture}
                     toneMapped={false}
                 />

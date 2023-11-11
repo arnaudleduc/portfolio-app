@@ -14,7 +14,7 @@ export default function MeshGroup2(props) {
                 geometry={nodes.buildings.geometry}
                 position={nodes.buildings.position}
                 >
-                <meshBasicMaterial
+                <meshStandardMaterial
                     map={bakedTexture}
                     toneMapped={false}
                 />
