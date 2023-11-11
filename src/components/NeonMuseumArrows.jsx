@@ -43,8 +43,8 @@ export default function NeonMuseumArrows(props) {
     return (
         <group {...props} dispose={null}>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.museumNeonArrow3.geometry}
                 position={nodes.museumNeonArrow3.position}
             >
@@ -52,12 +52,11 @@ export default function NeonMuseumArrows(props) {
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
                     emissiveIntensity={arrowPart1 ? neonArrowsEmissiveIntensity : 0}
-                    toneMapped={false}
                 />
             </mesh>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.museumNeonArrow2.geometry}
                 position={nodes.museumNeonArrow2.position}
             >
@@ -65,12 +64,11 @@ export default function NeonMuseumArrows(props) {
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
                     emissiveIntensity={arrowPart2 ? neonArrowsEmissiveIntensity : 0}
-                    toneMapped={false}
                 />
             </mesh>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.museumNeonArrow1.geometry}
                 position={nodes.museumNeonArrow1.position}
             >
@@ -78,12 +76,11 @@ export default function NeonMuseumArrows(props) {
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
                     emissiveIntensity={arrowPart3 ? neonArrowsEmissiveIntensity : 0}
-                    toneMapped={false}
                 />
             </mesh>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.museumNeonArrow3Tape.geometry}
                 position={nodes.museumNeonArrow3Tape.position}
             >
@@ -92,8 +89,8 @@ export default function NeonMuseumArrows(props) {
                 />
             </mesh>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.museumNeonArrow2Tape.geometry}
                 position={nodes.museumNeonArrow2Tape.position}
             >
@@ -102,8 +99,8 @@ export default function NeonMuseumArrows(props) {
                 />
             </mesh>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.museumNeonArrow1Tape.geometry}
                 position={nodes.museumNeonArrow1Tape.position}
             >

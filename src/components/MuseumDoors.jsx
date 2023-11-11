@@ -7,8 +7,8 @@ export default function MuseumDoors(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow
-        receiveShadow
+        
+        
         geometry={nodes.museumDoors.geometry}
         position={nodes.museumDoors.position}
       >

@@ -9,8 +9,8 @@ export default function MeshGroup1(props) {
     return (
         <group {...props} dispose={null}>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.boardZDK.geometry}
                 // position={[-1.385, 8.431, -0.999]}
                 position={nodes.boardZDK.position}

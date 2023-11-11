@@ -3,6 +3,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function NeonMuseum(props) {
     const { nodes } = useGLTF('models/neonMuseum.glb')
+    const BLOOM_FACTOR = 30
 
     // Make the neon flicker
     const [neonLit, setNeonLit] = useState(true)
@@ -20,8 +21,8 @@ export default function NeonMuseum(props) {
     return (
         <group {...props} dispose={null}>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.museumNeon.geometry}
                 position={nodes.museumNeon.position}
             >
@@ -29,12 +30,11 @@ export default function NeonMuseum(props) {
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
                     emissiveIntensity={50}
-                    toneMapped={false}
                 />
             </mesh>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.museumNeonTape.geometry}
                 position={nodes.museumNeonTape.position}
             >
@@ -44,8 +44,8 @@ export default function NeonMuseum(props) {
                 />
             </mesh>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.museumNeonE.geometry}
                 position={nodes.museumNeonE.position}
             >
@@ -53,7 +53,6 @@ export default function NeonMuseum(props) {
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
                     emissiveIntensity={neonLit ? 50 : 0}
-                    toneMapped={false}
                 />
             </mesh>
         </group>

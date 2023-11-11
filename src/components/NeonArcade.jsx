@@ -7,8 +7,8 @@ export default function NeonArcade(props) {
     return (
         <group {...props} dispose={null}>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={neonArcadeEN.nodes.boardArcadeTextEnglish.geometry}
                 position={neonArcadeEN.nodes.boardArcadeTextEnglish.position}
             >
@@ -16,12 +16,11 @@ export default function NeonArcade(props) {
                     color={'#2DE2E6'}
                     emissive={'#2DE2E6'}
                     emissiveIntensity={20}
-                    toneMapped={false}
                 />
             </mesh>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={neonArcadeJP.nodes.boardArcadeTextJapanese.geometry}
                 position={neonArcadeJP.nodes.boardArcadeTextJapanese.position}
             >
@@ -29,7 +28,6 @@ export default function NeonArcade(props) {
                     color={'#F706CF'}
                     emissive={'#F706CF'}
                     emissiveIntensity={30}
-                    toneMapped={false}
                 />
             </mesh>
         </group>

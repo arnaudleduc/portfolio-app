@@ -39,7 +39,7 @@ export default function Experience({ started }) {
             <MeshGroup3 />
             <MeshGroup4 />
             <Puddle />
-            <Sparkles />
+            {/* <Sparkles /> */}
             <IFrame started={started} />
         </>
 

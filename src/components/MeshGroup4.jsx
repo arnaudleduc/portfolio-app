@@ -8,8 +8,8 @@ export default function MeshGroup4(props) {
     return (
         <group {...props} dispose={null}>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.electricPole.geometry}
                 material={nodes.electricPole.material}
                 position={nodes.electricPole.position}

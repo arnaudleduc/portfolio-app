@@ -6,8 +6,8 @@ export default function BuildingsWindows(props) {
     return (
         <group {...props} dispose={null}>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.buildingsWindows.geometry}
                 position={nodes.buildingsWindows.position}
             >
@@ -15,7 +15,6 @@ export default function BuildingsWindows(props) {
                     color={'#ff6c11'}
                     emissive="#ff6c11"
                     emissiveIntensity={20}
-                    toneMapped={false}
                 />
             </mesh>
         </group>

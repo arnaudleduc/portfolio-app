@@ -28,8 +28,8 @@ export default function MeshGroup3(props) {
         <>
             <group {...props} dispose={null}>
                 <mesh
-                    castShadow
-                    receiveShadow
+                    
+                    
                     geometry={nodes.bin.geometry}
                     position={nodes.bin.position}
                 >
@@ -45,8 +45,8 @@ export default function MeshGroup3(props) {
                 <group name="Scene">
                     <mesh
                         name="airConditioner1Blades"
-                        castShadow
-                        receiveShadow
+                        
+                        
                         geometry={blades.nodes.airConditioner1Blades.geometry}
                         material={blades.nodes.airConditioner1Blades.material}
                         position={blades.nodes.airConditioner1Blades.position}
@@ -58,8 +58,8 @@ export default function MeshGroup3(props) {
                     </mesh>
                     <mesh
                         name="airConditioner2Blades"
-                        castShadow
-                        receiveShadow
+                        
+                        
                         geometry={blades.nodes.airConditioner2Blades.geometry}
                         material={blades.nodes.airConditioner2Blades.material}
                         position={blades.nodes.airConditioner2Blades.position}
@@ -71,8 +71,8 @@ export default function MeshGroup3(props) {
                     </mesh>
                     <mesh
                         name="airConditioner3Blades"
-                        castShadow
-                        receiveShadow
+                        
+                        
                         geometry={blades.nodes.airConditioner3Blades.geometry}
                         material={blades.nodes.airConditioner3Blades.material}
                         position={blades.nodes.airConditioner3Blades.position}

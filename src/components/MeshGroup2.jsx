@@ -9,8 +9,8 @@ export default function MeshGroup2(props) {
     return (
         <group {...props} dispose={null}>
             <mesh
-                castShadow
-                receiveShadow
+                
+                
                 geometry={nodes.buildings.geometry}
                 position={nodes.buildings.position}
                 >
