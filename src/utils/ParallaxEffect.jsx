@@ -1,24 +1,37 @@
 import { useFrame } from "@react-three/fiber"
+import { useEffect, useRef } from "react"
 
-export default function ParallaxEffect() {
-    /**
-     * Cursor
-     */
-    const cursor = {}
-    cursor.x = 0
-    cursor.y = 0
+export default function ParallaxEffect({ cameraGroup }) {
+    const cursor = useRef({ x: 0, y: 0 })
 
-    document.addEventListener('mousemove', (event) => {
-        cursor.x = event.clientX / window.innerWidth - 0.5
-        cursor.y = event.clientY / window.innerHeight - 0.5
+    const mouseMove = (event) => {
+        cursor.current.x = event.clientX / window.innerWidth - 0.5
+        cursor.current.y = event.clientY / window.innerHeight - 0.5
+    }
+
+    useEffect(() => {
+        console.log(cameraGroup)
+        window.addEventListener('mousemove', mouseMove)
+
+        return (() => {
+            window.removeEventListener('mousemove', mouseMove)
+        })
+    }, [])
+
+    useFrame(() => {
+        const parallaxX = - cursor.current.x * 0.5
+        const parallaxY = cursor.current.y * 0.5
+
+        // Parallax Position
+        cameraGroup.current.position.x += (parallaxX - cameraGroup.current.position.x) * 0.1
+        cameraGroup.current.position.y += (parallaxY - cameraGroup.current.position.y) * 0.1
+
+        // Parallax Horizontal Rotation 
+        if (cameraGroup.current.rotation.y >= -0.25 && cameraGroup.current.rotation.y <= 0.5) {
+            cameraGroup.current.rotation.y += ((parallaxX / 50) - cameraGroup.current.rotation.z) * 0.1
+        }
+        if (cameraGroup.current.rotation.y <= -0.25 || cameraGroup.current.rotation.y >= 0.5) {
+            cameraGroup.current.rotation.y -= ((parallaxX / 50) + cameraGroup.current.rotation.z) * 0.1
+        }
     })
-
-    useFrame((state) => {
-        const parallaxX = - cursor.x * 0.5
-        const parallaxY = cursor.y * 0.5
-        state.scene.position.x += (parallaxX - state.scene.position.x) * 0.1
-        state.scene.position.y += (parallaxY - state.scene.position.y) * 0.1
-    })
-
-    return null
 }

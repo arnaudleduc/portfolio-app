@@ -10,4 +10,5 @@
     background: linear-gradient(90deg, rgba(82, 65, 108, 1) 0%, rgba(54, 54, 98, 1) 100%);
     opacity: 1;
     transition: opacity 5s;
+    user-select: none;
 }

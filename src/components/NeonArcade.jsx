@@ -15,7 +15,7 @@ export default function NeonArcade(props) {
                 <meshStandardMaterial
                     color={'#2DE2E6'}
                     emissive={'#2DE2E6'}
-                    emissiveIntensity={20}
+                    emissiveIntensity={12.71}
                 />
             </mesh>
             <mesh
@@ -27,7 +27,7 @@ export default function NeonArcade(props) {
                 <meshStandardMaterial
                     color={'#F706CF'}
                     emissive={'#F706CF'}
-                    emissiveIntensity={30}
+                    emissiveIntensity={32.25}
                 />
             </mesh>
         </group>

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 
+const BLOOM_FACTOR = 30
+
 export default function NeonMuseum(props) {
     const { nodes } = useGLTF('models/neonMuseum.glb')
-    const BLOOM_FACTOR = 30
 
     // Make the neon flicker
     const [neonLit, setNeonLit] = useState(true)
@@ -29,7 +30,7 @@ export default function NeonMuseum(props) {
                 <meshStandardMaterial
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
-                    emissiveIntensity={50}
+                    emissiveIntensity={35.30}
                 />
             </mesh>
             <mesh
@@ -52,7 +53,7 @@ export default function NeonMuseum(props) {
                 <meshStandardMaterial
                     color={'#FD9DAC'}
                     emissive={'#FD1D53'}
-                    emissiveIntensity={neonLit ? 50 : 0}
+                    emissiveIntensity={neonLit ? 35.30 : 0}
                 />
             </mesh>
         </group>

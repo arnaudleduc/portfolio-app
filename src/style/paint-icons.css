@@ -5,6 +5,7 @@
 .paint-icons-visible {
     opacity: 1;
     transition: opacity 5s;
+    user-select: none;
 }
 
 .icon-github {

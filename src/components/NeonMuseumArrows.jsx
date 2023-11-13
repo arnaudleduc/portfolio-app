@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 export default function NeonMuseumArrows(props) {
     const { nodes } = useGLTF('models/neonMuseumArrows.glb')
-    const neonArrowsEmissiveIntensity = 40
+    const neonArrowsEmissiveIntensity = 35.30
 
     // Make the arrow blink
     const [arrowPart1, setArrowPart1] = useState(false)

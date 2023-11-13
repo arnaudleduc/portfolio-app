@@ -13,6 +13,7 @@ export default function App() {
     const [start, setStart] = useState(false)
     const {isSoundOn } = useSoundsStore()
 
+
     useEffect(() => {
         if (start) {
             if (isSoundOn === true) {
@@ -26,25 +27,7 @@ export default function App() {
 
     return (
         <>
-            <Canvas
-                camera={{
-                    fov: 15,
-                    near: 0.1,
-                    far: 500,
-                    position: [-32, 26, 32]
-                }}
-            >
-                {/* Controls */}
-                <OrbitControls
-                    // minDistance={40}
-                    // maxDistance={50}
-                    // minPolarAngle={(Math.PI / 2) - 1}
-                    // maxPolarAngle={(Math.PI / 2) - 0.43}
-                    // minAzimuthAngle={-((Math.PI) - 2.1)}
-                    // maxAzimuthAngle={-((Math.PI) + 3.5)}
-                    // target={[0, 4.3, 0]}
-                    // enablePan={false}
-                />
+            <Canvas>
                 <Perf
                     position='top-left'
                 />
@@ -62,7 +45,7 @@ export default function App() {
                     ]}
                     blur={0.8}
                 />
-                <ambientLight intensity={0.6} />
+                <ambientLight intensity={1.4} />
 
                 {/* Scene */}
                 <Suspense fallback={null}>
