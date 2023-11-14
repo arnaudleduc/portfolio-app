@@ -10,7 +10,6 @@ export default function MeshGroup1(props) {
         <group {...props} dispose={null}>
             <mesh
                 geometry={nodes.boardZDK.geometry}
-                // position={[-1.385, 8.431, -0.999]}
                 position={nodes.boardZDK.position}
             >
                 <meshStandardMaterial

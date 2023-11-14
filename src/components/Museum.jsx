@@ -223,19 +223,34 @@ const GoldMeshes = (props) => {
 
 const Paintings = (props) => {
     const abandonedHouseTexture = useTexture('textures/abandonedHouse.png')
+    const projectTexture = useTexture('textures/projet.jpg')
 
     return (
-        <mesh
-            position={[-17.9, 7.9, -5]}
-            rotation-y={Math.PI * 0.5}
-        >
-            <planeGeometry
-                args={[8.2, 5]}
-            />
-            <meshBasicMaterial
-                map={abandonedHouseTexture}
-            />
-        </mesh>
+        <group>
+            <mesh
+                position={[-17.9, 7.9, -5]}
+                rotation-y={Math.PI * 0.5}
+            >
+                <planeGeometry
+                    args={[8.2, 5]}
+                />
+                <meshBasicMaterial
+                    map={abandonedHouseTexture}
+                />
+            </mesh>
+            <mesh
+                position={[-17.9, 7.9, 4.6]}
+                rotation-y={Math.PI * 0.5}
+            >
+                <planeGeometry
+                    args={[4.7, 4.7]}
+                />
+                <meshBasicMaterial
+                    map={projectTexture}
+                />
+            </mesh>
+        </group>
+
     )
 }
 

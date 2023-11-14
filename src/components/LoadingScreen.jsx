@@ -14,7 +14,7 @@ export default function LoadingScreen({ started, onStarted }) {
                 />
             </div>
             <div className='loading-screen-board'>
-                <h1 className='loading-screen-title'>ZDK WEB AGENCY</h1>
+                <h1 className='loading-screen-title'>ZDK WEB AGENCY (WIP)</h1>
                 {!started && <button
                     className='loading-screen-button'
                     disabled={progress < 100}
