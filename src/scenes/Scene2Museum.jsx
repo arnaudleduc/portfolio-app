@@ -1,7 +1,5 @@
 import { useRef, useEffect } from "react"
-import { OrbitControls, PerspectiveCamera, useHelper } from "@react-three/drei"
-import { useFrame } from "@react-three/fiber"
-import * as THREE from 'three'
+import { OrbitControls, PerspectiveCamera} from "@react-three/drei"
 
 import Museum from "../components/Museum"
 
@@ -13,13 +11,13 @@ export default function Scene2Museum() {
     const cameraGroup = useRef()
     // useHelper(mainCamera, THREE.CameraHelper, 'red')
 
-    // useEffect(() => {
-    //     mainCamera.current.lookAt(0, 3.3, 0)
-    // }, [])
+    useEffect(() => {
+        mainCamera.current.lookAt(0, 3.3, 0)
+    }, [])
 
     return (
         <>
-            {/* <group ref={cameraGroup}>
+            <group ref={cameraGroup}>
                 <PerspectiveCamera
                     ref={mainCamera}
                     makeDefault
@@ -28,9 +26,9 @@ export default function Scene2Museum() {
                     fov={20}
                     position={[29, 6, -29]}
                 />
-            </group> */}
-            {/* <ParallaxEffect cameraGroup={cameraGroup} /> */}
-            <OrbitControls />
+            </group>
+            <ParallaxEffect cameraGroup={cameraGroup} />
+            {/* <OrbitControls /> */}
             <Museum />
         </>
 

@@ -12,7 +12,7 @@ const ambienceSound = new Audio('./sounds/synthwaveAmbience.mp3')
 
 export default function App() {
     const [start, setStart] = useState(false)
-    const [scene, setScene] = useState(2)
+    const [scene, setScene] = useState(1)
     const { isSoundOn } = useSoundsStore()
 
     useEffect(() => {
@@ -28,7 +28,10 @@ export default function App() {
 
     return (
         <>
-            <Canvas>
+            <Canvas
+                shadows
+            >
+                
                 <Perf
                     position='top-left'
                 />

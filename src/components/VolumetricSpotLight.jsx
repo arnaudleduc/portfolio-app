@@ -17,11 +17,10 @@ export default function VolumetricSpotlight(props) {
     const spotLight8 = useRef()
     // useHelper(spotLight8, THREE.SpotLightHelper, 'red')
 
-    // const { x, y, z } = useControls({
-    //     x: 13,
-    //     y: 16.75,
-    //     z: 13
-    // })
+    const { bias, normalBias } = useControls({
+        bias: 0,
+        normalBias: 0
+    })
     // const { targetX, targetY, targetZ } = useControls({
     //     targetX: 2,
     //     targetY: 0,
@@ -29,10 +28,14 @@ export default function VolumetricSpotlight(props) {
     // })
 
     useEffect(() => {
+        console.log(spotLight1);
+    })
+
+    useEffect(() => {
         spotLight1.current.target.position.set(2, 0, 16)
         spotLight2.current.target.position.set(0, 2.5, 16)
         spotLight3.current.target.position.set(-3, 2, 16)
-        spotLight4.current.target.position.set(-18, 0, 0)
+        spotLight4.current.target.position.set(-18, -8, 10)
         spotLight5.current.target.position.set(-16, 2, 2)
         spotLight6.current.target.position.set(-16, 2, 5)
         spotLight7.current.target.position.set(2, 0, -8)

@@ -42,7 +42,6 @@ export default function Scene1Street({ started }) {
 
             <EffectComposer>
                 <Bloom
-                    // mipmapBlur
                     intensity={0.1}
                     luminanceThreshold={8}
                 />

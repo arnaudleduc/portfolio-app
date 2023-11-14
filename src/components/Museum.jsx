@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { useGLTF, useHelper, useTexture } from "@react-three/drei"
+import { useGLTF, useHelper, useTexture, Sparkles } from "@react-three/drei"
 import VolumetricSpotlight from "./VolumetricSpotLight"
 import * as THREE from 'three'
 
@@ -24,7 +24,6 @@ const MuseumMesh = (props) => {
         <>
             <group {...props} dispose={null}>
                 <mesh
-                    castShadow
                     receiveShadow
                     geometry={nodes.Plane.geometry}
                     material={materials.wallsMaterial}
@@ -48,12 +47,31 @@ const MuseumMesh = (props) => {
                     material={materials.goldMaterial}
                 />
             </group>
-            <group >
-                <VolumetricSpotlight
+            <VolumetricSpotlight
 
-                    color={'#f7d081'}
-                />
-            </group>
+                color={'#f7d081'}
+            />
+            <Sparkles
+                count={100}
+                position={[2.5, 8, 15]}
+                size={5}
+                scale={[25, 15, 5]}
+                speed={0.2}
+            />
+            <Sparkles
+                count={100}
+                position={[-15, 8, -2.55]}
+                size={5}
+                scale={[5, 15, 25]}
+                speed={0.2}
+            />
+            <Sparkles
+                count={50}
+                position={[0, 2, -17.2]}
+                size={2}
+                scale={[25, 15, 5]}
+                speed={0.2}
+            />
         </>
     )
 }
@@ -182,7 +200,6 @@ const CopperMeshes = (props) => {
         <group {...props} dispose={null}>
             <mesh
                 castShadow
-                receiveShadow
                 geometry={nodes.VUE.geometry}
                 material={materials.copperMaterial}
                 position={nodes.VUE.position}
@@ -197,7 +214,6 @@ const SilverMeshes = (props) => {
         <group {...props} dispose={null}>
             <mesh
                 castShadow
-                receiveShadow
                 geometry={nodes.REACT.geometry}
                 material={materials.silverMaterial}
                 position={nodes.REACT.position}
@@ -212,7 +228,6 @@ const GoldMeshes = (props) => {
         <group {...props} dispose={null}>
             <mesh
                 castShadow
-                receiveShadow
                 geometry={nodes.textAchievments.geometry}
                 material={materials.goldMaterial}
                 position={[-17.81, 13.359, 6.456]}

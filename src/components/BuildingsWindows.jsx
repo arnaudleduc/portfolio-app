@@ -14,7 +14,7 @@ export default function BuildingsWindows(props) {
                 <meshStandardMaterial
                     color={'#ff6c11'}
                     emissive="#ff6c11"
-                    emissiveIntensity={20}
+                    emissiveIntensity={24.49}
                 />
             </mesh>
         </group>
