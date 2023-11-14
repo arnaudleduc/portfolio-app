@@ -3,11 +3,10 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function Sparkles(props) {
     const sparklesGroup = useRef()
-    const sparkles = useGLTF('models/sparkle.glb')
-    // const [sparklesModel] = useState([useGLTF('models/sparkle.glb')])
+    const sparkles = useGLTF('models/Scene1/sparkle.glb')
+    // const [sparklesModel] = useState([useGLTF('models/Scene1/sparkle.glb')])
     const animations = useAnimations(sparkles.animations, sparklesGroup)
     // const animations = useAnimations(sparklesModel[0].animations, sparklesGroup)
-    console.log(animations);
 
     useEffect(() => {
         animations.names.forEach(name => {
@@ -490,4 +489,4 @@ export default function Sparkles(props) {
     )
 }
 
-useGLTF.preload('models/sparkle.glb')
+useGLTF.preload('models/Scene1/sparkle.glb')

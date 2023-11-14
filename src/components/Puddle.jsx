@@ -1,7 +1,7 @@
 import { useGLTF, useTexture, MeshReflectorMaterial } from '@react-three/drei'
 
 export default function Puddle(props) {
-    const { nodes } = useGLTF('models/puddle.glb')
+    const { nodes } = useGLTF('models/Scene1/puddle.glb')
     const puddleAlphaMap = useTexture('textures/puddleAlpha.jpg')
 
     return (
@@ -32,4 +32,4 @@ export default function Puddle(props) {
     )
 }
 
-useGLTF.preload('models/puddle.glb')
+useGLTF.preload('models/Scene1/puddle.glb')

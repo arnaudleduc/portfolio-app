@@ -10,7 +10,6 @@ export default function ParallaxEffect({ cameraGroup }) {
     }
 
     useEffect(() => {
-        console.log(cameraGroup)
         window.addEventListener('mousemove', mouseMove)
 
         return (() => {

@@ -5,8 +5,8 @@ import { useEffect } from 'react'
 export default function MeshGroup3(props) {
     const bladesGroup = useRef()
 
-    const { nodes } = useGLTF('models/mesh3.glb')
-    const blades = useGLTF('/models/bladesClim.glb')
+    const { nodes } = useGLTF('models/Scene1/mesh3.glb')
+    const blades = useGLTF('/models/Scene1/bladesClim.glb')
 
     const { actions } = useAnimations(blades.animations, bladesGroup)
     
@@ -89,4 +89,4 @@ export default function MeshGroup3(props) {
     )
 }
 
-useGLTF.preload('models/mesh3.glb')
+useGLTF.preload('models/Scene1/mesh3.glb')

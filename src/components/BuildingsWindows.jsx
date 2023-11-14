@@ -1,7 +1,7 @@
 import { useGLTF } from '@react-three/drei'
 
 export default function BuildingsWindows(props) {
-    const { nodes } = useGLTF('models/buildingsWindows.glb')
+    const { nodes } = useGLTF('models/Scene1/buildingsWindows.glb')
 
     return (
         <group {...props} dispose={null}>
@@ -21,4 +21,4 @@ export default function BuildingsWindows(props) {
     )
 }
 
-useGLTF.preload('models/buildingsWindows.glb')
+useGLTF.preload('models/Scene1/buildingsWindows.glb')

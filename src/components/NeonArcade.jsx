@@ -1,8 +1,8 @@
 import { useGLTF, useTexture } from '@react-three/drei'
 
 export default function NeonArcade(props) {
-    const neonArcadeEN = useGLTF('models/neonArcadeEN.glb')
-    const neonArcadeJP = useGLTF('models/neonArcadeJP.glb')
+    const neonArcadeEN = useGLTF('models/Scene1/neonArcadeEN.glb')
+    const neonArcadeJP = useGLTF('models/Scene1/neonArcadeJP.glb')
 
     return (
         <group {...props} dispose={null}>
@@ -34,5 +34,5 @@ export default function NeonArcade(props) {
     )
 }
 
-useGLTF.preload('models/neonArcadeEN.glb')
-useGLTF.preload('models/neonArcadeJP.glb')
+useGLTF.preload('models/Scene1/neonArcadeEN.glb')
+useGLTF.preload('models/Scene1/neonArcadeJP.glb')

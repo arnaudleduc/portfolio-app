@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 const BLOOM_FACTOR = 30
 
 export default function NeonMuseum(props) {
-    const { nodes } = useGLTF('models/neonMuseum.glb')
+    const { nodes } = useGLTF('models/Scene1/neonMuseum.glb')
 
     // Make the neon flicker
     const [neonLit, setNeonLit] = useState(true)
@@ -14,7 +14,6 @@ export default function NeonMuseum(props) {
         const changeNeonStatus = () => {
             setNeonLit(!neonLit)
         }
-
         setTimeout(changeNeonStatus, randomTime)
     }, [neonLit])
 
@@ -60,4 +59,4 @@ export default function NeonMuseum(props) {
     )
 }
 
-useGLTF.preload('models/neonMuseum.glb')
+useGLTF.preload('models/Scene1/neonMuseum.glb')

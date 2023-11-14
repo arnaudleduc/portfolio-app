@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 
 export default function MeshGroup1(props) {
-    const { nodes } = useGLTF('models/mesh1.glb')
+    const { nodes } = useGLTF('models/Scene1/mesh1.glb')
     const bakedTexture = useTexture('textures/bakedMesh1.jpg')
     bakedTexture.flipY = false
 
@@ -22,4 +22,4 @@ export default function MeshGroup1(props) {
     )
 }
 
-useGLTF.preload('models/mesh1.glb')
+useGLTF.preload('models/Scene1/mesh1.glb')

@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF, MeshReflectorMaterial } from '@react-three/drei'
 
 export default function MuseumDoors(props) {
-  const { nodes } = useGLTF('models/museumDoors.glb')
+  const { nodes } = useGLTF('models/Scene1/museumDoors.glb')
 
   return (
     <group {...props} dispose={null}>
@@ -20,4 +20,4 @@ export default function MuseumDoors(props) {
   )
 }
 
-useGLTF.preload('models/museumDoors.glb')
+useGLTF.preload('models/Scene1/museumDoors.glb')

@@ -1,27 +1,24 @@
 import { Bloom, EffectComposer } from "@react-three/postprocessing"
-import { useThree } from "@react-three/fiber"
-import * as THREE from 'three'
 import { useEffect, useRef } from "react"
 import { PerspectiveCamera, useHelper } from "@react-three/drei"
 
-import MeshGroup1 from './MeshGroup1'
-import MeshGroup2 from './MeshGroup2'
-import MeshGroup3 from './MeshGroup3'
-import MeshGroup4 from './MeshGroup4'
-import BoardZDK from './BoardZDK'
-import BuildingsWindows from "./BuildingsWindows"
-import MuseumDoors from "./MuseumDoors"
-import NeonArcade from "./NeonArcade"
-import NeonMuseum from "./NeonMuseum"
-import NeonMuseumArrows from "./NeonMuseumArrows"
-import Puddle from "./Puddle"
-import IFrame from "./IFrame"
-import PaintIcons from "./PaintIcons"
+import MeshGroup1 from '../components/MeshGroup1'
+import MeshGroup2 from '../components/MeshGroup2'
+import MeshGroup3 from '../components/MeshGroup3'
+import MeshGroup4 from '../components/MeshGroup4'
+import BoardZDK from '../components/BoardZDK'
+import BuildingsWindows from "../components/BuildingsWindows"
+import MuseumDoors from "../components/MuseumDoors"
+import NeonArcade from "../components/NeonArcade"
+import NeonMuseum from "../components/NeonMuseum"
+import NeonMuseumArrows from "../components/NeonMuseumArrows"
+import Puddle from "../components/Puddle"
+import IFrame from "../components/IFrame"
+import PaintIcons from "../components/PaintIcons"
 
 import ParallaxEffect from "../utils/ParallaxEffect"
 
-
-export default function Experience({ started }) {
+export default function Scene1Street({ started }) {
     const mainCamera = useRef()
     const cameraGroup = useRef()
     // useHelper(mainCamera, THREE.CameraHelper, 'red')

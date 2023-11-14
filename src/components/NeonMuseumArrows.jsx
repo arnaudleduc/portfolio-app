@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 import { useEffect, useState } from 'react'
 
 export default function NeonMuseumArrows(props) {
-    const { nodes } = useGLTF('models/neonMuseumArrows.glb')
+    const { nodes } = useGLTF('models/Scene1/neonMuseumArrows.glb')
     const neonArrowsEmissiveIntensity = 35.30
 
     // Make the arrow blink
@@ -112,4 +112,4 @@ export default function NeonMuseumArrows(props) {
     )
 }
 
-useGLTF.preload('models/neonMuseumArrows.glb')
+useGLTF.preload('models/Scene1/neonMuseumArrows.glb')

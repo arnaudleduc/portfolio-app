@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei'
 const BLOOM_FACTOR = 8.008
 
 export default function BoardZDK(props) {
-    const { nodes } = useGLTF('models/boardZDK.glb')
+    const { nodes } = useGLTF('models/Scene1/boardZDK.glb')
 
     return (
         <group {...props} dispose={null}>
@@ -22,4 +22,4 @@ export default function BoardZDK(props) {
     )
 }
 
-useGLTF.preload('models/boardZDK.glb')
+useGLTF.preload('models/Scene1/boardZDK.glb')
