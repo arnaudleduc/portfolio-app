@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { useGLTF, useHelper } from "@react-three/drei"
+import { useGLTF, useHelper, useTexture } from "@react-three/drei"
 import VolumetricSpotlight from "./VolumetricSpotLight"
 import * as THREE from 'three'
 
@@ -13,6 +13,7 @@ export default function Museum() {
             <CopperMeshes />
             <SilverMeshes />
             <GoldMeshes />
+            <Paintings />
         </group>
     )
 }
@@ -217,6 +218,24 @@ const GoldMeshes = (props) => {
                 position={[-17.81, 13.359, 6.456]}
             />
         </group>
+    )
+}
+
+const Paintings = (props) => {
+    const abandonedHouseTexture = useTexture('textures/abandonedHouse.png')
+
+    return (
+        <mesh
+            position={[-17.9, 7.9, -5]}
+            rotation-y={Math.PI * 0.5}
+        >
+            <planeGeometry
+                args={[8.2, 5]}
+            />
+            <meshBasicMaterial
+                map={abandonedHouseTexture}
+            />
+        </mesh>
     )
 }
 

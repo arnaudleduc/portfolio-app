@@ -1,7 +1,7 @@
 import { Html } from "@react-three/drei"
 import '../style/iframe.css'
 
-export default function IFrame({ started }) {
+export default function IFrameContact({ started }) {
     return (
         <Html
             transform

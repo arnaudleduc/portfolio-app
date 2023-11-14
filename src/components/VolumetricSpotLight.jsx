@@ -140,12 +140,11 @@ export default function VolumetricSpotlight(props) {
                     penumbra={0.8}
                     distance={14}
                     angle={0.8}
-                    attenuation={12}
+                    attenuation={0}
                     anglePower={10}
-                    intensity={150}
-                    radiusBottom={14.4}
+                    intensity={300}
                     opacity={.5}
-                    volumetric={false}
+                    // volumetric={false}
                     {...props}
                 />
                 <SpotLight
@@ -155,12 +154,11 @@ export default function VolumetricSpotlight(props) {
                     penumbra={0.8}
                     distance={14}
                     angle={0.8}
-                    attenuation={12}
+                    attenuation={0}
                     anglePower={10}
-                    intensity={1400}
-                    radiusBottom={14.4}
+                    intensity={800}
                     opacity={.5}
-                    volumetric={false}
+                    // volumetric={false}
                     {...props}
                 />
             </group>

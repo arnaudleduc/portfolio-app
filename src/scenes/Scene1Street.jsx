@@ -13,7 +13,7 @@ import NeonArcade from "../components/NeonArcade"
 import NeonMuseum from "../components/NeonMuseum"
 import NeonMuseumArrows from "../components/NeonMuseumArrows"
 import Puddle from "../components/Puddle"
-import IFrame from "../components/IFrame"
+import IFrameContact from "../components/IFrameContact"
 import PaintIcons from "../components/PaintIcons"
 
 import ParallaxEffect from "../utils/ParallaxEffect"
@@ -60,7 +60,7 @@ export default function Scene1Street({ started }) {
             <MeshGroup4 />
             <Puddle />
             {/* <Sparkles /> */}
-            <IFrame started={started} />
+            <IFrameContact started={started} />
             <PaintIcons started={started} />
         </>
 
