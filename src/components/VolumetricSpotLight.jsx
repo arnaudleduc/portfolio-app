@@ -21,15 +21,6 @@ export default function VolumetricSpotlight(props) {
         bias: 0,
         normalBias: 0
     })
-    // const { targetX, targetY, targetZ } = useControls({
-    //     targetX: 2,
-    //     targetY: 0,
-    //     targetZ: 16,
-    // })
-
-    useEffect(() => {
-        console.log(spotLight1);
-    })
 
     useEffect(() => {
         spotLight1.current.target.position.set(2, 0, 16)

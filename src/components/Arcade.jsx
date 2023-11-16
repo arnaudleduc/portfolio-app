@@ -1,5 +1,10 @@
 import React, { useRef } from "react"
-import { useGLTF } from "@react-three/drei"
+import { useGLTF, shaderMaterial, useTexture } from "@react-three/drei"
+import { extend, useFrame } from "@react-three/fiber"
+import * as THREE from 'three'
+
+import neonMuralVertexShader from '../shaders/ArcadeMuralNeons/vertex.glsl'
+import neonMuralFragmentShader from '../shaders/ArcadeMuralNeons/fragment.glsl'
 
 export default function Arcade() {
     return (
@@ -161,25 +166,84 @@ const Decoration = () => {
     )
 }
 
+
 const MuralNeons = () => {
     const { nodes } = useGLTF("/models/Scene3/muralNeons.glb")
+    const muralNeonMaterial1 = useRef()
+    const muralNeonMaterial2 = useRef()
+    const muralNeonMaterial3 = useRef()
+
+    useFrame((state, delta) => {
+        muralNeonMaterial1.current.uTime += delta
+        muralNeonMaterial2.current.uTime += delta
+        muralNeonMaterial3.current.uTime += delta
+    })
+
+    const MuralNeonsMaterial1 = shaderMaterial(
+        {
+            uTime: 0,
+            uColor: new THREE.Color('#2de2e6'),
+            uWhite: new THREE.Color('#ffffff')
+        },
+        neonMuralVertexShader,
+        neonMuralFragmentShader
+    )
+
+    const MuralNeonsMaterial2 = shaderMaterial(
+        {
+            uTime: 1,
+            uColor: new THREE.Color('#f6019d'),
+            uWhite: new THREE.Color('#ffffff')
+        },
+        neonMuralVertexShader,
+        neonMuralFragmentShader
+    )
+
+    const MuralNeonsMaterial3 = shaderMaterial(
+        {
+            uTime: 2,
+            uColor: new THREE.Color('#023788'),
+            uWhite: new THREE.Color('#ffffff')
+        },
+        neonMuralVertexShader,
+        neonMuralFragmentShader
+    )
+
+    extend({
+        MuralNeonsMaterial1,
+        MuralNeonsMaterial2,
+        MuralNeonsMaterial3
+    })
+
     return (
         <group dispose={null}>
             <mesh
                 castShadow
                 geometry={nodes.muralNeon1.geometry}
                 position={nodes.muralNeon1.position}
-            />
+            >
+                <muralNeonsMaterial1
+                    ref={muralNeonMaterial1}
+                />
+            </mesh>
             <mesh
                 castShadow
                 geometry={nodes.muralNeon2.geometry}
                 position={nodes.muralNeon2.position}
-            />
+            >
+                <muralNeonsMaterial2
+                    ref={muralNeonMaterial2}
+                />
+            </mesh>
             <mesh
                 castShadow
                 geometry={nodes.muralNeon3.geometry}
                 position={nodes.muralNeon3.position}
-            />
+            >
+                <muralNeonsMaterial3
+                    ref={muralNeonMaterial3}
+                />
+            </mesh>
         </group>
     )
 }

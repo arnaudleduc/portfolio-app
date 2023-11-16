@@ -116,7 +116,7 @@ const displayScene2 = () => {
 const displayScene3 = () => {
     return (
         <>
-            <color args={['#ffffff']} attach="background" />
+            <color args={['#000000']} attach="background" />
             <ambientLight intensity={1.5} />
             <Suspense fallback={null}>
                 <Scene3Arcade />
