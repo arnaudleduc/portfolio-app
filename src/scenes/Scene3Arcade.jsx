@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react"
-import { OrbitControls, useHelper, PerspectiveCamera, SpotLight, GizmoHelper } from "@react-three/drei"
+import { OrbitControls, useHelper, PerspectiveCamera, Sparkles } from "@react-three/drei"
 import { EffectComposer, Bloom } from "@react-three/postprocessing"
 import * as THREE from 'three'
 
@@ -39,6 +39,15 @@ export default function Scene3Arcade() {
                 color={'#fd3777'}
                 // color={'#2de2e6'}
                 intensity={8}
+            />
+            <Sparkles
+                count={150}
+                position={[0, 7, -10]}
+                size={7}
+                scale={[40, 15, 20]}
+                speed={0.8}
+                color={'#fd3777'}
+                opacity={.8}
             />
             <Arcade />
         </>
