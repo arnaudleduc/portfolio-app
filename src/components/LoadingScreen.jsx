@@ -9,7 +9,6 @@ export default function LoadingScreen() {
 
     const startExperience = () => {
         setStarted()
-        console.log(started);
     }
 
     return (

@@ -48,7 +48,7 @@ export default function Scene1Street({ started }) {
                     luminanceThreshold={8}
                 />
             </EffectComposer >
-            {/* <ParallaxEffect cameraGroup={cameraGroup}/> */}
+            <ParallaxEffect cameraGroup={cameraGroup}/>
             < MeshGroup1 />
             <BoardZDK />
             <NeonArcade />

@@ -12,7 +12,6 @@ export default function Interface() {
 
     const backToMainScene = () => {
         sceneToMain()
-        setNotStarted()
     }
 
     return (

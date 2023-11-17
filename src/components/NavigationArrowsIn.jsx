@@ -30,6 +30,26 @@ export default function NavigationArrowsIn(props) {
         setNotStarted()
     }
 
+    const onPointerEnterArcadeArrow= () => {
+        document.body.style.cursor = 'pointer'
+        arcadeArrow.current.material.color.set(`hsl(${Math.random() * 360}, 100%, 70%)`)
+    }
+
+    const onPointerLeaveArcadeArrow= () => {
+        document.body.style.cursor = 'default'
+        arcadeArrow.current.material.color.set('#ffffff')
+    }
+
+    const onPointerEnterMuseumArrow= () => {
+        document.body.style.cursor = 'pointer'
+        museumArrow.current.material.color.set(`hsl(${Math.random() * 360}, 100%, 70%)`)
+    }
+
+    const onPointerLeaveMuseumArrow= () => {
+        document.body.style.cursor = 'default'
+        museumArrow.current.material.color.set('#ffffff')
+    }
+
     return (
         <group
             {...props}
@@ -40,12 +60,16 @@ export default function NavigationArrowsIn(props) {
                 geometry={nodes.arrow.geometry}
                 rotation-y={Math.PI}
                 onClick={onArcadeArrowClick}
+                // onPointerEnter={onPointerEnterArcadeArrow}
+                // onPointerLeave={onPointerLeaveArcadeArrow}
             />
             <mesh
                 ref={museumArrow}
                 geometry={nodes.arrow.geometry}
                 rotation-y={Math.PI * 0.5}
                 onClick={onMuseumArrowClick}
+                // onPointerEnter={onPointerEnterMuseumArrow}
+                // onPointerLeave={onPointerLeaveMuseumArrow}
             />
         </group>
     )

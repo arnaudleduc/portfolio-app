@@ -5,7 +5,6 @@ import Museum from "../components/Museum"
 
 import ParallaxEffect from "../utils/ParallaxEffect"
 
-
 export default function Scene2Museum() {
     const mainCamera = useRef()
     const cameraGroup = useRef()

@@ -4,16 +4,14 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing"
 import * as THREE from 'three'
 
 import Arcade from "../components/Arcade"
+import useArcadeStore from "../stores/useArcade"
 
 export default function Scene3Arcade() {
     const mainCamera = useRef()
     const cameraGroup = useRef()
-
+    const sparkles = useRef()
+    const { isCameraZoomed } = useArcadeStore()
     // useHelper(mainCamera, THREE.CameraHelper, 'red')
-
-    useEffect(() => {
-        mainCamera.current.lookAt(0, 12, 5)
-    }, [])
 
     return (
         <>
@@ -41,13 +39,14 @@ export default function Scene3Arcade() {
                 intensity={8}
             />
             <Sparkles
+            ref={sparkles}
                 count={150}
-                position={[0, 7, -10]}
+                position={[0, 7, -7]}
                 size={7}
                 scale={[40, 15, 20]}
                 speed={0.8}
                 color={'#fd3777'}
-                opacity={.8}
+                opacity={0.8}
             />
             <Arcade />
         </>

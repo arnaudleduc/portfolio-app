@@ -1,10 +1,12 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { useGLTF, shaderMaterial, useTexture } from "@react-three/drei"
-import { extend, useFrame } from "@react-three/fiber"
+import { extend, useFrame, useThree } from "@react-three/fiber"
 import * as THREE from 'three'
 
 import neonMuralVertexShader from '../shaders/ArcadeMuralNeons/vertex.glsl'
 import neonMuralFragmentShader from '../shaders/ArcadeMuralNeons/fragment.glsl'
+
+import useArcadeStore from "../stores/useArcade"
 
 export default function Arcade() {
     return (
@@ -39,15 +41,40 @@ const ArcadeWalls = () => {
 }
 
 const Arcades = () => {
+    const { isCameraZoomed, toggleCameraZoom } = useArcadeStore()
+    const arcadeRef = useRef()
+    const vec = new THREE.Vector3()
     const { nodes, materials } = useGLTF("/models/Scene3/arcades.glb")
+
+    const toggleCamera = () => {
+        toggleCameraZoom()
+    }
+
+    useFrame((state) => {
+        if (isCameraZoomed) {
+            state.camera.lookAt(0, 6.5, -25)
+            state.camera.position.lerp(vec.set(0, 10, -10), 0.01)
+            state.camera.updateProjectionMatrix()
+        } else {
+            state.camera.lookAt(0, 6.5, -25)
+            state.camera.position.lerp(vec.set(0, 20, 45), 0.01)
+            state.camera.updateProjectionMatrix()
+        }
+        return null;
+    })
+
     return (
         <group dispose={null}>
             <group position={[0, 0.069, -22.615]}>
                 <mesh
+                    ref={arcadeRef}
                     castShadow
                     receiveShadow
                     geometry={nodes.Cube.geometry}
                     material={materials.arcade1Material}
+                    onPointerEnter={() => { document.body.style.cursor = 'pointer' }}
+                    onPointerLeave={() => { document.body.style.cursor = 'default' }}
+                    onClick={toggleCamera}
                 />
                 <mesh
                     castShadow
