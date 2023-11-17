@@ -8,16 +8,16 @@ import { Perf } from 'r3f-perf'
 import LoadingScreen from '../components/LoadingScreen'
 import useSoundsStore from '../stores/useSounds'
 import Interface from '../components/Interface'
+import useScenesStore from '../stores/useScenes'
 
 const ambienceSound = new Audio('./sounds/synthwaveAmbience.mp3')
 
 export default function App() {
-    const [start, setStart] = useState(false)
-    const [scene, setScene] = useState(3)
+    const { scene, started } = useScenesStore()
     const { isSoundOn } = useSoundsStore()
 
     useEffect(() => {
-        if (start) {
+        if (started) {
             if (isSoundOn === true) {
                 ambienceSound.play()
                 ambienceSound.loop = true
@@ -25,7 +25,7 @@ export default function App() {
                 ambienceSound.pause()
             }
         }
-    }, [start, isSoundOn])
+    }, [started, isSoundOn])
 
     if (scene === 1) {
         return (
@@ -37,10 +37,10 @@ export default function App() {
                     <Perf
                         position='top-left'
                     />
-                    {displayScene1(start)}
+                    {displayScene1(started)}
                 </Canvas>
                 <Interface />
-                <LoadingScreen started={start} onStarted={() => setStart(true)} />
+                <LoadingScreen />
             </>
         )
     } else if (scene === 2) {
@@ -56,7 +56,7 @@ export default function App() {
                     {displayScene2()}
                 </Canvas>
                 <Interface />
-                <LoadingScreen started={start} onStarted={() => setStart(true)} />
+                <LoadingScreen />
             </>
         )
     } else {
@@ -66,19 +66,19 @@ export default function App() {
                     shadows
                 >
 
-                    <Perf
+                    {/* <Perf
                         position='top-left'
-                    />
+                    /> */}
                     {displayScene3()}
                 </Canvas>
                 <Interface />
-                <LoadingScreen started={start} onStarted={() => setStart(true)} />
+                <LoadingScreen />
             </>
         )
     }
 }
 
-const displayScene1 = (start) => {
+const displayScene1 = (started) => {
     return (
         <>
             <Environment
@@ -95,7 +95,7 @@ const displayScene1 = (start) => {
             />
             <ambientLight intensity={1.4} />
             <Suspense fallback={null}>
-                <Scene1Street started={start} />
+                <Scene1Street started={started} />
             </Suspense>
         </>
     )

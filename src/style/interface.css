@@ -2,7 +2,7 @@
     position: absolute;
     bottom: 3%;
     right: 1%;
-    border: 1px solid #fc8914;
+    border: 1px solid white;
     border-radius: 50%;
     pointer-events: auto;
     cursor: pointer;
@@ -18,4 +18,17 @@
     @media screen and (max-width: 767px) {
         height: 20px;
     }
+}
+
+.interface-arrow {
+    position: absolute;
+    bottom: 3%;
+    left: 1%;
+    pointer-events: auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.interface-arrow-icon {
+    width: 100px;
 }

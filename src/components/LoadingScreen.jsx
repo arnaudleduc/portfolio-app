@@ -1,8 +1,17 @@
 import { useProgress } from '@react-three/drei'
 import '../style/loader.css'
+import useScenesStore from '../stores/useScenes'
 
-export default function LoadingScreen({ started, onStarted }) {
+
+export default function LoadingScreen() {
     const { progress } = useProgress()
+    const { started, setStarted } = useScenesStore()
+
+    const startExperience = () => {
+        setStarted()
+        console.log(started);
+    }
+
     return (
         <div className={`loading-screen ${started ? 'loading-screen-started' : ''}`}>
             <div className='loading-screen-progress'>
@@ -18,7 +27,7 @@ export default function LoadingScreen({ started, onStarted }) {
                 {!started && <button
                     className='loading-screen-button'
                     disabled={progress < 100}
-                    onClick={onStarted}
+                    onClick={startExperience}
                 >
                     Start
                 </button>}
