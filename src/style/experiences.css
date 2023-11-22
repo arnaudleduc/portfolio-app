@@ -1,0 +1,53 @@
+@font-face {
+    font-family: Pixelate;
+    src: url(/fonts/SFPixelate.ttf);
+}
+
+@font-face {
+    font-family: PixelateBold;
+    src: url(/fonts/SFPixelateBold.ttf);
+}
+
+.experiences {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    color: white;
+}
+
+.experiences-main-title,
+.experiences-subtitle {
+    font-family: PixelateBold;
+    font-size: 2rem;
+    margin: 0px
+}
+
+.experiences-main-title {
+    text-align: center;
+    padding: 80px;
+}
+
+.experiences-subtitle {
+    margin-bottom: 20px;
+}
+
+.experiences-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 8% 0px 8%;
+    text-align: center;
+}
+
+.experiences-infos {
+    font-family: Pixelate;
+}
+
+.experiences-infos-container {
+    margin-bottom: 20px;
+}
+
+.experiences-title,
+.experiences-contract,
+.experiences-detail {
+    margin: 0px;
+}

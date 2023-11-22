@@ -4,6 +4,7 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing"
 import * as THREE from 'three'
 
 import Arcade from "../components/Arcade"
+import IFrame from "../components/IFrame"
 import useArcadeStore from "../stores/useArcade"
 
 export default function Scene3Arcade() {
@@ -22,7 +23,7 @@ export default function Scene3Arcade() {
                     near={0.1}
                     far={170}
                     fov={17}
-                    position={[0, 20, 45]}
+                    // position={[0, 30, 45]}
                 />
             </group>
             {/* <OrbitControls /> */}
@@ -49,6 +50,7 @@ export default function Scene3Arcade() {
                 opacity={0.8}
             />
             <Arcade />
+            <IFrame page="experiences" />
         </>
 
     )

@@ -5,6 +5,7 @@ import './style/main.css'
 import App from './routes/App'
 import ErrorPage from './ErrorPage'
 import Contact from './routes/Contact'
+import Experiences from './routes/Experiences'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "contact/",
     element: <Contact />
+  },
+  {
+    path: "experiences/",
+    element: <Experiences />
   }
 ])
 

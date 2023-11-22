@@ -52,12 +52,12 @@ const Arcades = () => {
 
     useFrame((state) => {
         if (isCameraZoomed) {
-            state.camera.lookAt(0, 6.5, -25)
-            state.camera.position.lerp(vec.set(0, 10, -10), 0.01)
+            state.camera.lookAt(0, 5.8, -25)
+            state.camera.position.lerp(vec.set(0, 13, -10), 0.01)
             state.camera.updateProjectionMatrix()
         } else {
-            state.camera.lookAt(0, 6.5, -25)
-            state.camera.position.lerp(vec.set(0, 20, 45), 0.01)
+            state.camera.lookAt(0, 5.8, -25)
+            state.camera.position.lerp(vec.set(0, 30, 45), 0.01)
             state.camera.updateProjectionMatrix()
         }
         return null;

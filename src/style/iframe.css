@@ -12,3 +12,15 @@
     transition: opacity 5s;
     user-select: none;
 }
+
+.experiences-page iframe {
+    opacity: 0;
+}
+
+.experiences-page-visible iframe {
+    width: 950px;
+    height: 890px;
+    border-radius: 80px;
+    user-select: none;
+    pointer-events: none;
+}

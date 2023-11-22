@@ -13,7 +13,7 @@ import NeonArcade from "../components/NeonArcade"
 import NeonMuseum from "../components/NeonMuseum"
 import NeonMuseumArrows from "../components/NeonMuseumArrows"
 import Puddle from "../components/Puddle"
-import IFrameContact from "../components/IFrameContact"
+import IFrame from "../components/IFrame"
 import PaintIcons from "../components/PaintIcons"
 import Arrow from "../components/NavigationArrowsIn"
 
@@ -60,7 +60,7 @@ export default function Scene1Street({ started }) {
             <MeshGroup3 />
             <MeshGroup4 />
             <Puddle />
-            <IFrameContact started={started} />
+            <IFrame started={started} page="contact"/>
             <PaintIcons started={started} />
             <Arrow
                 scale={0.25}
