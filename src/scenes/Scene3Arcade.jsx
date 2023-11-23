@@ -6,12 +6,14 @@ import * as THREE from 'three'
 import Arcade from "../components/Arcade"
 import IFrame from "../components/IFrame"
 import useArcadeStore from "../stores/useArcade"
+import useScenesStore from "../stores/useScenes"
 
 export default function Scene3Arcade() {
     const mainCamera = useRef()
     const cameraGroup = useRef()
     const sparkles = useRef()
     const { isCameraZoomed } = useArcadeStore()
+    const { started } = useScenesStore()
     // useHelper(mainCamera, THREE.CameraHelper, 'red')
 
     return (
@@ -50,7 +52,7 @@ export default function Scene3Arcade() {
                 opacity={0.8}
             />
             <Arcade />
-            <IFrame page="experiences" />
+            <IFrame started={started} page="experiences" />
         </>
 
     )

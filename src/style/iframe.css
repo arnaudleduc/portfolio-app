@@ -21,6 +21,8 @@
     width: 950px;
     height: 890px;
     border-radius: 80px;
+    opacity: 1;
+    transition: opacity 5s;
     user-select: none;
     pointer-events: none;
 }

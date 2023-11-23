@@ -7,7 +7,7 @@ import useScenesStore from "../stores/useScenes"
 export default function NavigationArrowsIn(props) {
     const arcadeArrow = useRef()
     const museumArrow = useRef()
-    const { scene, sceneToArcade, sceneToMuseum, setNotStarted } = useScenesStore()
+    const { started, sceneToArcade, sceneToMuseum, setNotStarted } = useScenesStore()
     const { nodes } = useGLTF("/models/Scene1/arrow.glb")
 
     useFrame((state) => {

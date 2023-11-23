@@ -17,7 +17,7 @@ export default function IFrame({ started, page }) {
         return (
             <Html
                 transform
-                wrapperClass={"experiences-page-visible"}
+                wrapperClass={started ? "experiences-page-visible" : "experiences-page"}
                 distanceFactor={1.5}
                 position={[0, 7.25, -21.78]}
                 rotation-x={-Math.PI * 0.09}
