@@ -1,0 +1,25 @@
+{
+    
+    "contact": "Contact me !",
+    "mission": "A ponctual mission ?",
+    "job": "A job offer ?",
+    
+    "about": "About me",
+    "experiences": "Experiences",
+    "creative": "Creative Developer",
+    "frontend": "Frontend Developer",
+    "revenue": "Revenue Manager",
+    "frontdesk": "Front Desk Manager",
+    "designer": "Graphic Designer",
+    "ceo": "CEO",
+    "today": "Today",
+    "fixed-term-contract": "Fixed-Term Contract",
+    "permanent-contract": "Permanent Contract",
+
+    "education": "Education",
+    "first": "First Year",
+    "bachelor": "3D Graphic Design Bachelor",
+    "web": "Web Developer Certification",
+    "three": "Three.js Developer Certification",
+    "return": "Return"
+}

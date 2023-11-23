@@ -1,0 +1,24 @@
+{
+    "contact": "Contactez moi !",
+    "mission": "Une mission ponctuelle ?",
+    "job": "Une offre d'emploi ?",
+    
+    "about": "À propos de moi",
+    "experiences": "Expériences",
+    "creative": "Développeur Créatif",
+    "frontend": "Développeur Front-end",
+    "revenue": "Régisseur des recettes",
+    "frontdesk": "Responsable de l'accueil",
+    "designer": "Infographiste",
+    "ceo": "Directeur Général",
+    "today": "Aujourd'hui",
+    "fixed-term-contract": "CDD",
+    "permanent-contract": "CDI",
+
+    "education": "Formations",
+    "first": "Première Année",
+    "bachelor": "Bachelor Infographie 3D",
+    "web": "Certification Développeur Web",
+    "three": "Certification Développeur Three.js",
+    "return": "Retour"
+}

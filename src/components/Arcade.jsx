@@ -92,39 +92,111 @@ const Arcades = () => {
                     castShadow
                     receiveShadow
                     geometry={nodes.Cube_3.geometry}
-                    material={nodes.Cube_3.material}
-                />
-                <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.Cube_4.geometry}
                     material={materials.aluMaterial}
                 />
+            </group>
+            <group position={[-23.917, 0.069, -20.586]}>
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Cube_5.geometry}
+                    geometry={nodes.Cube001.geometry}
                     material={materials.arcade2Material}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Cube_6.geometry}
+                    geometry={nodes.Cube001_1.geometry}
+                    material={materials.padMaterials}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube001_2.geometry}
+                    material={materials.joystickMaterial}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube001_3.geometry}
+                    material={materials.aluMaterial}
+                />
+            </group>
+            <group position={[-25.132, 0.069, -15.993]}>
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube003.geometry}
                     material={materials.arcade3Material}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Cube_7.geometry}
+                    geometry={nodes.Cube003_1.geometry}
+                    material={materials.padMaterials}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube003_2.geometry}
+                    material={materials.joystickMaterial}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube003_3.geometry}
+                    material={materials.aluMaterial}
+                />
+            </group>
+            <group position={[23.777, 0.069, -20.851]}>
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube004.geometry}
                     material={materials.arcade4Material}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Cube_8.geometry}
-                    material={materials.arcade5Material}
+                    geometry={nodes.Cube004_1.geometry}
+                    material={materials.padMaterials}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube004_2.geometry}
+                    material={materials.joystickMaterial}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube004_3.geometry}
+                    material={materials.aluMaterial}
                 />
             </group>
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Cube005.geometry}
+                material={materials.arcade5Material}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Cube005_1.geometry}
+                material={materials.padMaterials}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Cube005_2.geometry}
+                material={materials.joystickMaterial}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Cube005_3.geometry}
+                material={materials.aluMaterial}
+            />
         </group>
     )
 }

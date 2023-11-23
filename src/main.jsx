@@ -6,6 +6,7 @@ import App from './routes/App'
 import ErrorPage from './ErrorPage'
 import Contact from './routes/Contact'
 import Experiences from './routes/Experiences'
+import './i18n'
 
 const router = createBrowserRouter([
   {

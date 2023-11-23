@@ -2,8 +2,6 @@ import { useEffect, useRef } from "react"
 import { SpotLight, useHelper } from "@react-three/drei"
 import * as THREE from 'three'
 
-import { useControls } from "leva"
-
 const SPOTLIGHT_INTENSITY = 800
 
 export default function VolumetricSpotlight(props) {
@@ -16,12 +14,7 @@ export default function VolumetricSpotlight(props) {
     const spotLight7 = useRef()
     const spotLight8 = useRef()
     // useHelper(spotLight8, THREE.SpotLightHelper, 'red')
-
-    const { bias, normalBias } = useControls({
-        bias: 0,
-        normalBias: 0
-    })
-
+    
     useEffect(() => {
         spotLight1.current.target.position.set(2, 0, 16)
         spotLight2.current.target.position.set(0, 2.5, 16)

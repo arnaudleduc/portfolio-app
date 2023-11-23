@@ -3,8 +3,6 @@ import { useGLTF, useHelper, useTexture, Sparkles } from "@react-three/drei"
 import VolumetricSpotlight from "./VolumetricSpotLight"
 import * as THREE from 'three'
 
-import { useControls } from "leva"
-
 export default function Museum() {
     return (
         <group scale={0.62}>

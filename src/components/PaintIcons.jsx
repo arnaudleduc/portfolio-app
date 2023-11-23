@@ -1,5 +1,4 @@
 import { Html } from "@react-three/drei"
-import { useControls } from "leva"
 import '../style/paint-icons.css'
 
 export default function PaintIcons({ started }) {

@@ -18,17 +18,17 @@
 .experiences-main-title,
 .experiences-subtitle {
     font-family: PixelateBold;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0px
 }
 
 .experiences-main-title {
     text-align: center;
-    padding: 80px;
+    padding: 50px;
 }
 
 .experiences-subtitle {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .experiences-container {
@@ -50,4 +50,8 @@
 .experiences-contract,
 .experiences-detail {
     margin: 0px;
+}
+
+.experiences-back {
+    margin-top: 65px;
 }

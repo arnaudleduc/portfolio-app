@@ -23,11 +23,13 @@ export default function NavigationArrowsIn(props) {
     const onArcadeArrowClick = () => {
         sceneToArcade()
         setNotStarted()
+        document.body.style.cursor = 'default'
     }
 
     const onMuseumArrowClick = () => {
         sceneToMuseum()
         setNotStarted()
+        document.body.style.cursor = 'default'
     }
 
     const onPointerEnterArcadeArrow= () => {
@@ -60,16 +62,16 @@ export default function NavigationArrowsIn(props) {
                 geometry={nodes.arrow.geometry}
                 rotation-y={Math.PI}
                 onClick={onArcadeArrowClick}
-                // onPointerEnter={onPointerEnterArcadeArrow}
-                // onPointerLeave={onPointerLeaveArcadeArrow}
+                onPointerEnter={onPointerEnterArcadeArrow}
+                onPointerLeave={onPointerLeaveArcadeArrow}
             />
             <mesh
                 ref={museumArrow}
                 geometry={nodes.arrow.geometry}
                 rotation-y={Math.PI * 0.5}
                 onClick={onMuseumArrowClick}
-                // onPointerEnter={onPointerEnterMuseumArrow}
-                // onPointerLeave={onPointerLeaveMuseumArrow}
+                onPointerEnter={onPointerEnterMuseumArrow}
+                onPointerLeave={onPointerLeaveMuseumArrow}
             />
         </group>
     )
