@@ -1,4 +1,4 @@
-.interface-sound {
+/* .interface-sound {
     position: absolute;
     bottom: 3%;
     right: 1%;
@@ -18,7 +18,41 @@
     @media screen and (max-width: 767px) {
         height: 20px;
     }
+} */
+
+.sound-bars-container {
+    position: absolute;
+    width: 40px;
+    height: 70px;
+    bottom: 2%;
+    right: 2%;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    user-select: none;
 }
+
+.sound-bars-container * {
+    margin-left: 1px;
+}
+
+.sound-bars-1,
+.sound-bars-2,
+.sound-bars-3,
+.sound-bars-4,
+.sound-bars-5,
+.sound-bars-6,
+.sound-bars-7,
+.sound-bars-8 {
+    width: 3px;
+    transition: height 1s;
+    background: white;
+    align-self: end;
+}
+
+
+
+
 
 .interface-arrow {
     position: absolute;

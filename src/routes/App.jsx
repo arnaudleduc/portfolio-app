@@ -10,22 +10,8 @@ import useSoundsStore from '../stores/useSounds'
 import Interface from '../components/Interface'
 import useScenesStore from '../stores/useScenes'
 
-const ambienceSound = new Audio('./sounds/synthwaveAmbience.mp3')
-
 export default function App() {
     const { scene, started } = useScenesStore()
-    const { isSoundOn } = useSoundsStore()
-
-    useEffect(() => {
-        if (started) {
-            if (isSoundOn === true) {
-                ambienceSound.play()
-                ambienceSound.loop = true
-            } else if (isSoundOn == false) {
-                ambienceSound.pause()
-            }
-        }
-    }, [started, isSoundOn])
 
     if (scene === 1) {
         return (
