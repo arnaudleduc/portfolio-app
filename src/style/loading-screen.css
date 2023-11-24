@@ -1,7 +1,8 @@
 @font-face {
-    font-family: Tamworth;
-    src: url(/fonts/TAMWORTH.TTF);
+    font-family: FNA;
+    src: url(/fonts/Film_Noir_Adventure.ttf);
 }
+
 
 .loading-screen {
     position: fixed;
@@ -16,7 +17,7 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
-    font-family: Tamworth;
+    font-family: FNA;
     user-select: none;
     pointer-events: none;
 }
@@ -33,8 +34,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
-    padding-right: 15px;
-    margin-bottom: 8px;
+}
+
+.loading-screen-subtitle {
+    text-align: right;
+    background: rgb(45, 226, 230);
+    background: linear-gradient(90deg, rgba(45, 226, 230, 1) 0%, rgba(247, 6, 207, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
 }
 
 .loading-screen-button {
@@ -48,7 +56,7 @@
     font-size: 2.5rem;
     border-radius: 8px;
     transition: background-color 0.4s;
-    font-family: Tamworth;
+    font-family: FNA;
     pointer-events: auto;
 }
 

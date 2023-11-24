@@ -1,15 +1,51 @@
 import { useProgress } from '@react-three/drei'
-import '../style/loader.css'
+import '../style/loading-screen.css'
 import useScenesStore from '../stores/useScenes'
+import { useTranslation } from 'react-i18next'
 
 
-export default function LoadingScreen() {
+export default function LoadingScreen({ scene }) {
     const { progress } = useProgress()
     const { started, setStarted } = useScenesStore()
+    const { t } = useTranslation()
 
     const startExperience = () => {
         setStarted()
-        console.log(started);
+    }
+
+    let content
+    if (scene === "main") {
+        content = <div className='loading-screen-board'>
+            <h1 className='loading-screen-title'>ZDK WEB AGENCY</h1>
+            <h2 className='loading-screen-subtitle'>{t("by")} Arnaud Leduc</h2>
+            {!started && <button
+                className='loading-screen-button'
+                disabled={progress < 100}
+                onClick={startExperience}
+            >
+                {t("start")}
+            </button>}
+        </div>
+    } else if (scene === "museum") {
+        content = <div className='loading-screen-board'>
+            {!started && <button
+                className='loading-screen-button'
+                disabled={progress < 100}
+                onClick={startExperience}
+            >
+                {t("museum")}
+            </button>}
+        </div>
+    } else if (scene === "arcade") {
+        content = <div className='loading-screen-board'>
+            {!started && <button
+                className='loading-screen-button'
+                disabled={progress < 100}
+                onClick={startExperience}
+            >
+                {t("arcade")}
+            </button>}
+        </div>
     }
 
     return (
@@ -22,16 +58,7 @@ export default function LoadingScreen() {
                     }}
                 />
             </div>
-            <div className='loading-screen-board'>
-                <h1 className='loading-screen-title'>ZDK WEB AGENCY (WIP)</h1>
-                {!started && <button
-                    className='loading-screen-button'
-                    disabled={progress < 100}
-                    onClick={startExperience}
-                >
-                    Start
-                </button>}
-            </div>
+            {content}
         </div>
     )
-}
+} 

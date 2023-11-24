@@ -25,7 +25,7 @@ export default function Scene3Arcade() {
                     near={0.1}
                     far={170}
                     fov={17}
-                    // position={[0, 30, 45]}
+                    position={[0, 30, 45]}
                 />
             </group>
             {/* <OrbitControls /> */}

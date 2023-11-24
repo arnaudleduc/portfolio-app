@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import { useGLTF, shaderMaterial, useTexture } from "@react-three/drei"
+import { useGLTF, shaderMaterial, useTexture, useAnimations } from "@react-three/drei"
 import { extend, useFrame, useThree } from "@react-three/fiber"
 import * as THREE from 'three'
 
@@ -14,6 +14,7 @@ export default function Arcade() {
             <ArcadeWalls />
             <Arcades />
             <Decoration />
+            <Mario />
             <MuralNeons />
             <PacmanNeons />
         </group>
@@ -60,7 +61,7 @@ const Arcades = () => {
             state.camera.position.lerp(vec.set(0, 30, 45), 0.01)
             state.camera.updateProjectionMatrix()
         }
-        return null;
+        return null
     })
 
     return (
@@ -210,54 +211,48 @@ const Decoration = () => {
                     castShadow
                     receiveShadow
                     geometry={nodes.Plane017.geometry}
-                    material={materials.marioMaterial}
-                />
-                <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.Plane017_1.geometry}
                     material={materials.spaceInvaderMaterial}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Plane017_2.geometry}
+                    geometry={nodes.Plane017_1.geometry}
                     material={materials.tetrisSquareMaterial}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Plane017_3.geometry}
+                    geometry={nodes.Plane017_2.geometry}
                     material={materials.tetrisVerticalS}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Plane017_4.geometry}
+                    geometry={nodes.Plane017_3.geometry}
                     material={materials.tetrisHorizontalS}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Plane017_5.geometry}
+                    geometry={nodes.Plane017_4.geometry}
                     material={materials.tetrisDownLMaterial}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Plane017_6.geometry}
+                    geometry={nodes.Plane017_5.geometry}
                     material={materials.tetrisPurpleMaterial}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Plane017_7.geometry}
+                    geometry={nodes.Plane017_6.geometry}
                     material={materials.tetrisDownL}
                 />
                 <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Plane017_8.geometry}
+                    geometry={nodes.Plane017_7.geometry}
                     material={materials.tetrisUpLMaterial}
                 />
             </group>
@@ -265,6 +260,47 @@ const Decoration = () => {
     )
 }
 
+const Mario = () => {
+    const group = useRef()
+    const { nodes, materials, animations } = useGLTF("/models/Scene3/mario.glb")
+    const { actions } = useAnimations(animations, group)
+    const marioAnimation = actions['shake']
+
+    const marioHaha = new Audio('./sounds/sm64_mario_haha.wav')
+    const marioHurt = new Audio('./sounds/sm64_mario_hurt.wav')
+    const marioYahoo = new Audio('./sounds/sm64_mario_yahoo.wav')
+    const marioOof = new Audio('./sounds/sm64_mario_oof.wav')
+    const marioHoohoo = new Audio('./sounds/sm64_mario_hoohoo.wav')
+    const marioSounds = [marioHaha, marioHurt, marioYahoo, marioOof, marioHoohoo]
+
+    const pauseAnimation = () => {
+        marioAnimation.stop()
+    }
+
+    const onClick = () => {
+        let randomMarioSound = Math.round(Math.random() * 4)
+
+        marioAnimation.play()
+        marioSounds[randomMarioSound].play()
+        setTimeout(pauseAnimation, 1000)
+    }
+
+    return (
+        <group ref={group} dispose={null}>
+            <group name="Scene">
+                <mesh
+                    name="mario"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.mario.geometry}
+                    material={materials.marioMaterial}
+                    position={nodes.mario.position}
+                    onClick={onClick}
+                />
+            </group>
+        </group>
+    )
+}
 
 const MuralNeons = () => {
     const { nodes } = useGLTF("/models/Scene3/muralNeons.glb")
@@ -431,5 +467,6 @@ const PacmanNeons = () => {
 useGLTF.preload("/models/Scene3/walls.glb")
 useGLTF.preload("/models/Scene3/arcades.glb")
 useGLTF.preload("/models/Scene3/decoration.glb")
+useGLTF.preload("/models/Scene3/mario.glb")
 useGLTF.preload("/models/Scene3/muralNeons.glb")
 useGLTF.preload("/models/Scene3/pacmanNeons.glb")

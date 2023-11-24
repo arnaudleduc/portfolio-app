@@ -39,7 +39,7 @@ export default function NavigationArrowsIn(props) {
 
     const onPointerLeaveArcadeArrow= () => {
         document.body.style.cursor = 'default'
-        arcadeArrow.current.material.color.set('#ffffff')
+        arcadeArrow.current.material?.color.set('#ffffff')
     }
 
     const onPointerEnterMuseumArrow= () => {
@@ -49,7 +49,7 @@ export default function NavigationArrowsIn(props) {
 
     const onPointerLeaveMuseumArrow= () => {
         document.body.style.cursor = 'default'
-        museumArrow.current.material.color.set('#ffffff')
+        museumArrow.current.material?.color.set('#ffffff')
     }
 
     return (

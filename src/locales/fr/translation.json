@@ -20,5 +20,10 @@
     "bachelor": "Bachelor Infographie 3D",
     "web": "Certification Développeur Web",
     "three": "Certification Développeur Three.js",
-    "return": "Retour"
+    "return": "Retour",
+
+    "by": "par",
+    "start": "Démarrer l'expérience",
+    "museum": "Vers le Musée",
+    "arcade": "Vers l'Arcade"
 }

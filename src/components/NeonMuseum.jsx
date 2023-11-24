@@ -10,19 +10,18 @@ export default function NeonMuseum(props) {
     const [neonLit, setNeonLit] = useState(true)
     const randomTime = Math.random() * 1000 + 1;
 
+    const changeNeonStatus = () => {
+        setNeonLit(!neonLit)
+    }
+
     useEffect(() => {
-        const changeNeonStatus = () => {
-            setNeonLit(!neonLit)
-        }
         setTimeout(changeNeonStatus, randomTime)
     }, [neonLit])
 
 
     return (
         <group {...props} dispose={null}>
-            <mesh
-                
-                
+            <mesh  
                 geometry={nodes.museumNeon.geometry}
                 position={nodes.museumNeon.position}
             >
@@ -32,9 +31,7 @@ export default function NeonMuseum(props) {
                     emissiveIntensity={35.30}
                 />
             </mesh>
-            <mesh
-                
-                
+            <mesh   
                 geometry={nodes.museumNeonTape.geometry}
                 position={nodes.museumNeonTape.position}
             >
@@ -43,9 +40,7 @@ export default function NeonMuseum(props) {
 
                 />
             </mesh>
-            <mesh
-                
-                
+            <mesh             
                 geometry={nodes.museumNeonE.geometry}
                 position={nodes.museumNeonE.position}
             >

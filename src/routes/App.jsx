@@ -40,7 +40,7 @@ export default function App() {
                     {displayScene1(started)}
                 </Canvas>
                 <Interface />
-                <LoadingScreen />
+                <LoadingScreen scene="main" />
             </>
         )
     } else if (scene === 2) {
@@ -56,7 +56,7 @@ export default function App() {
                     {displayScene2()}
                 </Canvas>
                 <Interface />
-                <LoadingScreen />
+                <LoadingScreen scene="museum" />
             </>
         )
     } else {
@@ -72,7 +72,7 @@ export default function App() {
                     {displayScene3()}
                 </Canvas>
                 <Interface />
-                <LoadingScreen />
+                <LoadingScreen scene="arcade" />
             </>
         )
     }

@@ -21,5 +21,10 @@
     "bachelor": "3D Graphic Design Bachelor",
     "web": "Web Developer Certification",
     "three": "Three.js Developer Certification",
-    "return": "Return"
+    "return": "Return",
+
+    "by": "By",
+    "start": "Start Experience",
+    "museum": "Enter Museum",
+    "arcade": "Enter Arcade"
 }

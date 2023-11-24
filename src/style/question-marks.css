@@ -1,0 +1,95 @@
+@font-face {
+    font-family: FNA;
+    src: url(/fonts/Film_Noir_Adventure.ttf);
+}
+
+.d2-question-marks,
+.d3-question-marks,
+.dev-question-marks {
+    visibility: visible;
+    transition: visibility 2s;
+}
+
+.d2-question-marks-inactive,
+.d3-question-marks-inactive,
+.dev-question-marks-inactive {
+    visibility: hidden;
+    transition: visibility 2s;
+}
+
+.d2-question-mark-inactive {
+    font-family: FNA;
+    width: 200px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background: #000000DD;
+    color: #e6ab53;
+    text-shadow: 0px 5px 0px #000000;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.d3-question-mark-inactive {
+    font-family: FNA;
+    width: 200px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background: #000000DD;
+    color: #e6ab53;
+    text-shadow: 0px 5px 0px #000000;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.dev-question-mark-inactive {
+    font-family: FNA;
+    width: 200px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background: #000000DD;
+    color: #e6ab53;
+    text-shadow: 0px 5px 0px #000000;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.d2-question-mark,
+.d3-question-mark,
+.dev-question-mark {
+    font-family: FNA;
+    width: 200px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background: #000000DD;
+    color: #e6ab53;
+    text-shadow: 0px 5px 0px #000000;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+.d2-question-mark-title,
+.d3-question-mark-title,
+.dev-question-mark-title {
+    margin: 0;
+    padding: 10px 0 10px 0;
+    font-size: 18px;
+}
+
+.d2-question-mark-skill,
+.d3-question-mark-skill,
+.dev-question-mark-skill {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 15px;
+}
+
+.d2-question-mark-skill:not(:last-child),
+.d3-question-mark-skill:not(:last-child),
+.dev-question-mark-skill:not(:last-child) {
+    padding-bottom: 7px;
+}

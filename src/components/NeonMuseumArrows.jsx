@@ -10,41 +10,37 @@ export default function NeonMuseumArrows(props) {
     const [arrowPart2, setArrowPart2] = useState(false)
     const [arrowPart3, setArrowPart3] = useState(false)
 
+    let t1, t2, t3, t4
     useEffect(() => {
-        // let delay = 1000
-        const changeArrowPart1Status = () => {
-            setArrowPart1(!arrowPart1)
-        }
-        const changeArrowPart2Status = () => {
-            setArrowPart2(!arrowPart2)
-        }
-        const changeArrowPart3Status = () => {
-            setArrowPart3(!arrowPart3)
-        }
-
         if (!arrowPart1 && !arrowPart2 && !arrowPart3) {
-            setTimeout(changeArrowPart1Status, 1000)
+            t1 = setTimeout(() => setArrowPart1(!arrowPart1), 1000)
         }
         if (arrowPart1 && !arrowPart2 && !arrowPart3) {
-            setTimeout(changeArrowPart2Status, 1000)
+            t2 = setTimeout(() => setArrowPart2(!arrowPart2), 1000)
         }
         if (arrowPart1 && arrowPart2 && !arrowPart3) {
-            setTimeout(changeArrowPart3Status, 1000)
+            t3 = setTimeout(() => setArrowPart3(!arrowPart3), 1000)
         }
         if (arrowPart1 && arrowPart2 && arrowPart3) {
-            setTimeout(() => {
-                changeArrowPart1Status()
-                changeArrowPart2Status()
-                changeArrowPart3Status()
+            t4 = setTimeout(() => {
+                setArrowPart1(!arrowPart1)
+                setArrowPart2(!arrowPart2)
+                setArrowPart3(!arrowPart3)
             }, 1000)
         }
-    })
+
+        return () => {
+            clearTimeout(t1)
+            clearTimeout(t2)
+            clearTimeout(t3)
+            clearTimeout(t4)
+        }
+
+    }, [arrowPart1, arrowPart2, arrowPart3])
 
     return (
         <group {...props} dispose={null}>
             <mesh
-                
-                
                 geometry={nodes.museumNeonArrow3.geometry}
                 position={nodes.museumNeonArrow3.position}
             >
@@ -55,8 +51,6 @@ export default function NeonMuseumArrows(props) {
                 />
             </mesh>
             <mesh
-                
-                
                 geometry={nodes.museumNeonArrow2.geometry}
                 position={nodes.museumNeonArrow2.position}
             >
@@ -67,8 +61,6 @@ export default function NeonMuseumArrows(props) {
                 />
             </mesh>
             <mesh
-                
-                
                 geometry={nodes.museumNeonArrow1.geometry}
                 position={nodes.museumNeonArrow1.position}
             >
@@ -79,8 +71,6 @@ export default function NeonMuseumArrows(props) {
                 />
             </mesh>
             <mesh
-                
-                
                 geometry={nodes.museumNeonArrow3Tape.geometry}
                 position={nodes.museumNeonArrow3Tape.position}
             >
@@ -89,8 +79,6 @@ export default function NeonMuseumArrows(props) {
                 />
             </mesh>
             <mesh
-                
-                
                 geometry={nodes.museumNeonArrow2Tape.geometry}
                 position={nodes.museumNeonArrow2Tape.position}
             >
@@ -99,8 +87,6 @@ export default function NeonMuseumArrows(props) {
                 />
             </mesh>
             <mesh
-                
-                
                 geometry={nodes.museumNeonArrow1Tape.geometry}
                 position={nodes.museumNeonArrow1Tape.position}
             >
