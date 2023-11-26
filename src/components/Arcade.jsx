@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useGLTF, shaderMaterial, useTexture, useAnimations } from "@react-three/drei"
 import { extend, useFrame, useThree } from "@react-three/fiber"
 import * as THREE from 'three'
@@ -385,6 +385,52 @@ const MuralNeons = () => {
 
 const PacmanNeons = () => {
     const { nodes } = useGLTF("/models/Scene3/pacmanNeons.glb")
+    const [pacman, setPacman] = useState(false)
+    const [ghostOrange, setGhostOrange] = useState(false)
+    const [ghostPink, setGhostPink] = useState(false)
+    const [ghostBlue, setGhostBlue] = useState(false)
+    const [ghostRed, setGhostRed] = useState(false)
+    const [ghostEyes, setGhostEyes] = useState(false)
+
+    let t1, t2, t3, t4, t5, t6
+    useEffect(() => {
+        if (!pacman && !ghostOrange && !ghostPink && !ghostBlue && !ghostRed) {
+            t1 = setTimeout(() => setPacman(!pacman), 1000)
+        }
+        if (pacman && !ghostOrange && !ghostPink && !ghostBlue && !ghostRed) {
+            t2 = setTimeout(() => setGhostOrange(!ghostOrange), 1000)
+        }
+        if (pacman && ghostOrange && !ghostPink && !ghostBlue && !ghostRed) {
+            t3 = setTimeout(() => setGhostPink(!ghostPink), 1000)
+        }
+        if (pacman && ghostOrange && ghostPink && !ghostBlue && !ghostRed) {
+            t4 = setTimeout(() => setGhostBlue(!ghostBlue), 1000)
+        }
+        if (pacman && ghostOrange && ghostPink && ghostBlue && !ghostRed) {
+            t5 = setTimeout(() => setGhostRed(!ghostRed), 1000)
+        }
+        if (pacman && ghostOrange && ghostPink && ghostBlue && ghostRed) {
+            t6 = setTimeout(() => {
+                setPacman(!pacman)
+                setGhostOrange(!ghostOrange)
+                setGhostPink(!ghostPink)
+                setGhostBlue(!ghostBlue)
+                setGhostRed(!ghostRed)
+            }, 1000)
+        }
+
+        return () => {
+            clearTimeout(t1)
+            clearTimeout(t2)
+            clearTimeout(t3)
+            clearTimeout(t4)
+            clearTimeout(t5)
+            clearTimeout(t6)
+        }
+
+
+    }, [pacman, ghostOrange, ghostPink, ghostBlue, ghostRed, ghostEyes])
+
     return (
         <group dispose={null}>
             <mesh
@@ -396,7 +442,7 @@ const PacmanNeons = () => {
                 <meshStandardMaterial
                     color={'#fce803'}
                     emissive={'#fce803'}
-                    emissiveIntensity={10}
+                    emissiveIntensity={pacman ? 10 : 0}
                 />
             </mesh>
             <mesh
@@ -406,9 +452,21 @@ const PacmanNeons = () => {
                 position={nodes.neonGhostOrange.position}
             >
                 <meshStandardMaterial
-                    color={'orange'}
-                    emissive={'orange'}
-                    emissiveIntensity={30}
+                    color={'#ff6a00'}
+                    emissive={'#ff6a00'}
+                    emissiveIntensity={ghostOrange ? 30 : 0}
+                />
+            </mesh>
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.neonGhostOrangeEyes.geometry}
+                position={[9.789, 11.535, -25.065]}
+            >
+                <meshStandardMaterial
+                    color={'white'}
+                    emissive={'white'}
+                    emissiveIntensity={ghostOrange ? 10 : 0}
                 />
             </mesh>
             <mesh
@@ -418,9 +476,21 @@ const PacmanNeons = () => {
                 position={nodes.neonGhostPink.position}
             >
                 <meshStandardMaterial
-                    color={'#ff00e6'}
-                    emissive={'#ff00e6'}
-                    emissiveIntensity={30}
+                    color={'#e852ff'}
+                    emissive={'#e852ff'}
+                    emissiveIntensity={ghostPink ? 30 : 0}
+                />
+            </mesh>
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.neonGhostPinkEyes.geometry}
+                position={[12.126, 8.835, -25.065]}
+            >
+                <meshStandardMaterial
+                    color={'white'}
+                    emissive={'white'}
+                    emissiveIntensity={ghostPink ? 10 : 0}
                 />
             </mesh>
             <mesh
@@ -430,9 +500,21 @@ const PacmanNeons = () => {
                 position={nodes.neonGhostBlue.position}
             >
                 <meshStandardMaterial
-                    color={'blue'}
-                    emissive={'blue'}
-                    emissiveIntensity={110.6}
+                    color={'#529aff'}
+                    emissive={'#529aff'}
+                    emissiveIntensity={ghostBlue ? 30 : 0}
+                />
+            </mesh>
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.neonGhostBlueEyes.geometry}
+                position={[14.412, 6.195, -25.065]}
+            >
+                <meshStandardMaterial
+                    color={'white'}
+                    emissive={'white'}
+                    emissiveIntensity={ghostBlue ? 10 : 0}
                 />
             </mesh>
             <mesh
@@ -442,22 +524,21 @@ const PacmanNeons = () => {
                 position={nodes.neonGhostRed.position}
             >
                 <meshStandardMaterial
-                    color={'red'}
-                    emissive={'red'}
-                    emissiveIntensity={40}
+                    color={'#ff6052'}
+                    emissive={'#ff6052'}
+                    emissiveIntensity={ghostRed ? 30 : 0}
                 />
             </mesh>
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.neonGhostEyes.geometry}
-                position={nodes.neonGhostEyes.position}
-                rotation={[0, 0, Math.PI]}
+                geometry={nodes.neonGhostRedEyes.geometry}
+                position={[16.787, 3.452, -25.065]}
             >
                 <meshStandardMaterial
                     color={'white'}
                     emissive={'white'}
-                    emissiveIntensity={10}
+                    emissiveIntensity={ghostRed ? 10 : 0}
                 />
             </mesh>
         </group>
