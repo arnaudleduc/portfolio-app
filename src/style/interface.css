@@ -1,25 +1,3 @@
-/* .interface-sound {
-    position: absolute;
-    bottom: 3%;
-    right: 1%;
-    border: 1px solid white;
-    border-radius: 50%;
-    pointer-events: auto;
-    cursor: pointer;
-    user-select: none;
-    @media screen and (max-width: 767px) {
-        right: 5%;
-    }
-}
-
-.interface-sound-icon {
-    height: 30px;
-    margin: 10px;
-    @media screen and (max-width: 767px) {
-        height: 20px;
-    }
-} */
-
 .sound-bars-container {
     position: absolute;
     width: 40px;
@@ -36,23 +14,13 @@
     margin-left: 1px;
 }
 
-.sound-bars-1,
-.sound-bars-2,
-.sound-bars-3,
-.sound-bars-4,
-.sound-bars-5,
-.sound-bars-6,
-.sound-bars-7,
-.sound-bars-8 {
+.sound-bars {
     width: 3px;
+    height: 70px;
     transition: height 1s;
     background: white;
     align-self: end;
 }
-
-
-
-
 
 .interface-arrow {
     position: absolute;
