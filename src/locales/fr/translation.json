@@ -25,5 +25,15 @@
     "by": "par",
     "start": "Démarrer l'expérience",
     "museum": "Vers le Musée",
-    "arcade": "Vers l'Arcade"
+    "arcade": "Vers l'Arcade",
+    "click": "Cliquez ici",
+
+    "back": "Retour",
+
+    "2DSkill": "Compétences 2D",
+    "3DSkill": "Compétences 3D",
+    "devSkill": "Compétences Dev",
+    "experienced": "Expérimenté",
+    "intermediate": "Intermédiaire",
+    "novice": "Novice"
 }

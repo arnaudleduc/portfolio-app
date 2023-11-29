@@ -28,22 +28,24 @@ export default function LoadingScreen({ scene }) {
         </div>
     } else if (scene === "museum") {
         content = <div className='loading-screen-board'>
+            <h1 className='loading-screen-title'>{t("museum")}</h1>
             {!started && <button
                 className='loading-screen-button'
                 disabled={progress < 100}
                 onClick={startExperience}
             >
-                {t("museum")}
+                {t("click")}
             </button>}
         </div>
     } else if (scene === "arcade") {
         content = <div className='loading-screen-board'>
+            <h1 className='loading-screen-title'>{t("arcade")}</h1>
             {!started && <button
                 className='loading-screen-button'
                 disabled={progress < 100}
                 onClick={startExperience}
             >
-                {t("arcade")}
+                {t("click")}
             </button>}
         </div>
     }

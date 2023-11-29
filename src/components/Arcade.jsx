@@ -8,7 +8,7 @@ import neonMuralFragmentShader from '../shaders/ArcadeMuralNeons/fragment.glsl'
 
 import useArcadeStore from "../stores/useArcade"
 
-export default function Arcade() {
+export default function Arcade(props) {
     return (
         <group>
             <ArcadeWalls />
@@ -17,6 +17,7 @@ export default function Arcade() {
             <Mario />
             <MuralNeons />
             <PacmanNeons />
+            <Switch changeColor={props.changeColor} />
         </group>
     )
 }
@@ -545,9 +546,30 @@ const PacmanNeons = () => {
     )
 }
 
+const Switch = (props) => {
+    const { nodes } = useGLTF("/models/Scene3/switch.glb")
+    return (
+        <group dispose={null}>
+            <mesh
+                castShadow
+                geometry={nodes["switch"].geometry}
+                position={nodes["switch"].position}
+                onPointerEnter={() => { document.body.style.cursor = 'pointer' }}
+                onPointerLeave={() => { document.body.style.cursor = 'default' }}
+                onClick={props.changeColor}
+            >
+                <meshStandardMaterial
+                    color={'#e6e8d1'}
+                />
+            </mesh>
+        </group>
+    )
+}
+
 useGLTF.preload("/models/Scene3/walls.glb")
 useGLTF.preload("/models/Scene3/arcades.glb")
 useGLTF.preload("/models/Scene3/decoration.glb")
 useGLTF.preload("/models/Scene3/mario.glb")
 useGLTF.preload("/models/Scene3/muralNeons.glb")
 useGLTF.preload("/models/Scene3/pacmanNeons.glb")
+useGLTF.preload("/models/Scene3/switch.glb")

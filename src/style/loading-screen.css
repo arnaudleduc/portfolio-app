@@ -48,13 +48,14 @@
 .loading-screen-button {
     padding: 8px 38px 8px 32px;
     background-color: #030917;
-    background: linear-gradient(90deg, rgba(45, 226, 230, 1) 0%, rgba(247, 6, 207, 1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border: solid 2px transparent;
+    background: linear-gradient(transparent, transparent) padding-box,
+        linear-gradient(90deg, rgba(45, 226, 230, 1) 0%, rgba(247, 6, 207, 1) 100%) border-box;
+    /* -webkit-background-clip: text; */
+    -webkit-text-fill-color: #1C1525;
     font-weight: bold;
     font-size: 2.5rem;
-    border-radius: 8px;
+    border: 5px solid transparent;
+    border-radius: 40px;
     transition: background-color 0.4s;
     font-family: FNA;
     pointer-events: auto;
@@ -62,6 +63,8 @@
 
 .loading-screen-button:hover {
     text-shadow: 0px 0px 1px #CECECE;
+    border: 5px solid white;
+    -webkit-text-fill-color: white;
     background: transparent;
 }
 

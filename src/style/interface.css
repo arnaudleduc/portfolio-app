@@ -1,3 +1,8 @@
+@font-face {
+    font-family: FNA;
+    src: url(/fonts/Film_Noir_Adventure.ttf);
+}
+
 .sound-bars-container {
     position: absolute;
     width: 40px;
@@ -22,6 +27,10 @@
     align-self: end;
 }
 
+/* .interface-arrow-icon-container {
+
+} */
+
 .interface-arrow {
     position: absolute;
     bottom: 3%;
@@ -31,6 +40,26 @@
     user-select: none;
 }
 
+.interface-arrow-icon-container {
+    position: relative;
+}
+
 .interface-arrow-icon {
     width: 100px;
+}
+
+.interface-arrow-text-fr {
+    position: absolute;
+    bottom: 6px;
+    left: 16px;
+    font-family: FNA;
+    font-size: 20px;
+}
+
+.interface-arrow-text-en {
+    position: absolute;
+    bottom: 6px;
+    left: 30px;
+    font-family: FNA;
+    font-size: 20px;
 }

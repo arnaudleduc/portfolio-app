@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import { useGLTF, useHelper, useTexture, Sparkles, Html } from "@react-three/drei"
 import VolumetricSpotlight from "./VolumetricSpotLight"
+import { useTranslation } from "react-i18next"
 import * as THREE from 'three'
 
 import '../style/question-marks.css'
@@ -25,6 +26,12 @@ const MuseumMesh = () => {
     return (
         <>
             <group dispose={null}>
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.bases.geometry}
+                    material={materials.wallsMaterial}
+                />
                 <mesh
                     receiveShadow
                     geometry={nodes.Plane.geometry}
@@ -241,7 +248,8 @@ const GoldMeshes = () => {
 
 const Paintings = () => {
     const abandonedHouseTexture = useTexture('textures/abandonedHouse.png')
-    const projectTexture = useTexture('textures/projet.jpg')
+    const projectTextureFR = useTexture('textures/projetFR.jpg')
+    const projectTextureEN = useTexture('textures/projetEN.jpg')
 
     const onPaintingClick = () => {
         window.open('https://abandoned-house.vercel.app', '_blank')
@@ -271,7 +279,7 @@ const Paintings = () => {
                     args={[4.7, 4.7]}
                 />
                 <meshBasicMaterial
-                    map={projectTexture}
+                    map={navigator.language === 'en' ? projectTextureEN : projectTextureFR}
                 />
             </mesh>
         </group>
@@ -284,6 +292,7 @@ const QuestionMarks = () => {
     const [isMouseOn3DQuestionMark, setIsMouseOn3DQuestionMark] = useState(false)
     const [isMouseOnDevQuestionMark, setIsMouseOnDevQuestionMark] = useState(false)
     const { started } = useScenesStore()
+    const { t } = useTranslation()
 
     const pointerEnter2D = () => {
         document.body.style.cursor = 'pointer'
@@ -331,12 +340,12 @@ const QuestionMarks = () => {
                         wrapperClass={isMouseOn2DQuestionMark ? "d2-question-marks" : "d2-question-marks-inactive"}
                     >
                         <div className={isMouseOn2DQuestionMark ? "d2-question-mark" : "d2-question-mark-inactive"}>
-                            <h2 className="d2-question-mark-title">Compétences 2D</h2>
-                            <h3 className="d2-question-mark-skill">Adobe Photoshop : Confirmé</h3>
-                            <h3 className="d2-question-mark-skill">Adobe Première : Confirmé</h3>
-                            <h3 className="d2-question-mark-skill">Adobe After Effects : Intermédiaire</h3>
-                            <h3 className="d2-question-mark-skill">Adobe InDesign : Novice</h3>
-                            <h3 className="d2-question-mark-skill">Adobe Illustrator : Novice</h3>
+                            <h2 className="d2-question-mark-title">{t("2DSkill")}</h2>
+                            <h3 className="d2-question-mark-skill">Adobe Photoshop : <p>{t("experienced")}</p></h3>
+                            <h3 className="d2-question-mark-skill">Adobe Premiere : <p>{t("experienced")}</p></h3>
+                            <h3 className="d2-question-mark-skill">Adobe After Effects : <p>{t("intermediate")}</p></h3>
+                            <h3 className="d2-question-mark-skill">Adobe InDesign : <p>{t("novice")}</p></h3>
+                            <h3 className="d2-question-mark-skill">Adobe Illustrator : <p>{t("novice")}</p></h3>
                         </div>
                     </Html>
                 }
@@ -357,10 +366,10 @@ const QuestionMarks = () => {
                         wrapperClass={isMouseOn3DQuestionMark ? "d3-question-marks" : "d3-question-marks-inactive"}
                     >
                         <div className={isMouseOn3DQuestionMark ? "d3-question-mark" : "d3-question-mark-inactive"}>
-                            <h2 className="d3-question-mark-title">Compétences 3D</h2>
-                            <h3 className="d3-question-mark-skill">Blender : Confirmé</h3>
-                            <h3 className="d3-question-mark-skill">Autodesk Maya : Confirmé</h3>
-                            <h3 className="d3-question-mark-skill">Dimforge Rapier : Novice</h3>
+                            <h2 className="d3-question-mark-title">{t("3DSkill")}</h2>
+                            <h3 className="d3-question-mark-skill">Blender : <p>{t("experienced")}</p></h3>
+                            <h3 className="d3-question-mark-skill">Autodesk Maya : <p>{t("experienced")}</p></h3>
+                            <h3 className="d3-question-mark-skill">Dimforge Rapier : <p>{t("novice")}</p></h3>
                         </div>
                     </Html>
                 }
@@ -381,15 +390,15 @@ const QuestionMarks = () => {
                         wrapperClass={isMouseOnDevQuestionMark ? "dev-question-marks" : "dev-question-marks-inactive"}
                     >
                         <div className={isMouseOnDevQuestionMark ? "dev-question-mark" : "dev-question-mark-inactive"}>
-                            <h2 className="dev-question-mark-title">Compétences Dev</h2>
-                            <h3 className="dev-question-mark-skill">HTML5 : Confirmé</h3>
-                            <h3 className="dev-question-mark-skill">CSS3, SASS, Tailwind : Confirmé</h3>
-                            <h3 className="dev-question-mark-skill">JavaScript : Intermédiaire</h3>
-                            <h3 className="dev-question-mark-skill">Typescript : Intermédiaire</h3>
-                            <h3 className="dev-question-mark-skill">Three.js : Intermédiaire</h3>
-                            <h3 className="dev-question-mark-skill">Vite : Novice</h3>
-                            <h3 className="dev-question-mark-skill">React : Intermédiaire</h3>
-                            <h3 className="dev-question-mark-skill">Vue.js : Novice</h3>
+                            <h2 className="dev-question-mark-title">{t("devSkill")}</h2>
+                            <h3 className="dev-question-mark-skill">HTML5 : <p>{t("experienced")}</p></h3>
+                            <h3 className="dev-question-mark-skill">CSS3, SASS, Tailwind : <p>{t("experienced")}</p></h3>
+                            <h3 className="dev-question-mark-skill">JavaScript : <p>{t("intermediate")}</p></h3>
+                            <h3 className="dev-question-mark-skill">Typescript : <p>{t("intermediate")}</p></h3>
+                            <h3 className="dev-question-mark-skill">Three.js : <p>{t("intermediate")}</p></h3>
+                            <h3 className="dev-question-mark-skill">Vite : <p>{t("novice")}</p></h3>
+                            <h3 className="dev-question-mark-skill">React : <p>{t("intermediate")}</p></h3>
+                            <h3 className="dev-question-mark-skill">Vue.js : <p>{t("novice")}</p></h3>
                         </div>
                     </Html>}
 

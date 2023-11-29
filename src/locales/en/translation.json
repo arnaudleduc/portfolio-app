@@ -25,6 +25,16 @@
 
     "by": "By",
     "start": "Start Experience",
-    "museum": "Enter Museum",
-    "arcade": "Enter Arcade"
+    "museum": "Entering Museum",
+    "arcade": "Entering Arcade",
+    "click": "Click here",
+
+    "back": "Back",
+
+    "2DSkill": "2D Skills",
+    "3DSkill": "3D Skills",
+    "devSkills": "Dev Skills",
+    "experienced": "Experienced",
+    "intermediate": "Intermediate",
+    "novice": "Novice"
 }

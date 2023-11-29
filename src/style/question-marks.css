@@ -10,6 +10,13 @@
     transition: visibility 2s;
 }
 
+h2 p,
+h3 p {
+    text-align: right;
+    margin: 0px 0px 5px 0px;
+    font-size: 13px;
+}
+
 .d2-question-marks-inactive,
 .d3-question-marks-inactive,
 .dev-question-marks-inactive {
@@ -20,12 +27,11 @@
 .d2-question-mark-inactive {
     font-family: FNA;
     width: 200px;
-    padding-bottom: 10px;
+    padding: 0px 10px 10px 10px;
     border-radius: 20px;
     background: #000000DD;
     color: #e6ab53;
     text-shadow: 0px 5px 0px #000000;
-    text-align: center;
     opacity: 0;
     transition: opacity 2s;
 }
@@ -33,12 +39,11 @@
 .d3-question-mark-inactive {
     font-family: FNA;
     width: 200px;
-    padding-bottom: 10px;
+    padding: 0px 10px 10px 10px;
     border-radius: 20px;
     background: #000000DD;
     color: #e6ab53;
     text-shadow: 0px 5px 0px #000000;
-    text-align: center;
     opacity: 0;
     transition: opacity 2s;
 }
@@ -46,12 +51,11 @@
 .dev-question-mark-inactive {
     font-family: FNA;
     width: 200px;
-    padding-bottom: 10px;
+    padding: 0px 10px 10px 10px;
     border-radius: 20px;
     background: #000000DD;
     color: #e6ab53;
     text-shadow: 0px 5px 0px #000000;
-    text-align: center;
     opacity: 0;
     transition: opacity 2s;
 }
@@ -61,12 +65,11 @@
 .dev-question-mark {
     font-family: FNA;
     width: 200px;
-    padding-bottom: 10px;
+    padding: 0px 10px 10px 10px;
     border-radius: 20px;
     background: #000000DD;
     color: #e6ab53;
     text-shadow: 0px 5px 0px #000000;
-    text-align: center;
     opacity: 1;
     transition: opacity 2s;
 }
@@ -77,6 +80,7 @@
     margin: 0;
     padding: 10px 0 10px 0;
     font-size: 18px;
+    text-align: center;
 }
 
 .d2-question-mark-skill,

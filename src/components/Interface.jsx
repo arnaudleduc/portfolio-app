@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import useScenesStore from "../stores/useScenes"
 import useSoundsStore from "../stores/useSounds"
 import '../style/interface.css'
+import { useTranslation } from "react-i18next"
 import * as THREE from 'three'
 
 const ambienceSound = new Audio('/sounds/synthwaveAmbience.mp3')
@@ -9,6 +10,7 @@ const ambienceSound = new Audio('/sounds/synthwaveAmbience.mp3')
 export default function Interface() {
     const { isSoundOn, toggleSounds } = useSoundsStore()
     const { scene, started, sceneToMain, setNotStarted } = useScenesStore()
+    const { t } = useTranslation()
 
     useEffect(() => {
         if (started) {
@@ -55,7 +57,10 @@ export default function Interface() {
                 {
                     scene !== 1
                     &&
-                    <img className="interface-arrow-icon" src="./icons/arrow.png" alt="arrow icon" />
+                    <div className="interface-arrow-icon-container">
+                        <img className="interface-arrow-icon" src="./icons/arrow.png" alt="arrow icon" />
+                        <p className={navigator.language === "fr" ? "interface-arrow-text-fr" : "interface-arrow-text-en"}>{t("back")}</p>
+                    </div>
                 }
             </div>
 

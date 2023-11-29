@@ -98,7 +98,7 @@ float cnoise(vec3 P){
 
 void main() {
     // Displace the UV
-    vec2 displacedUv = vUv + uTime * 0.1;
+    vec2 displacedUv = vUv + uTime * 0.03;
 
     // Perlin noise
     float strength = cnoise(vec3(displacedUv * 50.0, uTime * 0.1));
