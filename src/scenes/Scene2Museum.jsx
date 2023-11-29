@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react"
-import { OrbitControls, PerspectiveCamera} from "@react-three/drei"
+import { PerspectiveCamera} from "@react-three/drei"
 
 import Museum from "../components/Museum"
 
@@ -27,9 +27,7 @@ export default function Scene2Museum() {
                 />
             </group>
             <ParallaxEffect cameraGroup={cameraGroup} />
-            {/* <OrbitControls /> */}
             <Museum />
         </>
-
     )
 }

@@ -1,15 +1,15 @@
-import { useEffect, useRef } from "react"
+import { useEffect } from "react"
 import useScenesStore from "../stores/useScenes"
 import useSoundsStore from "../stores/useSounds"
-import '../style/interface.css'
 import { useTranslation } from "react-i18next"
-import * as THREE from 'three'
+
+import '../style/interface.css'
 
 const ambienceSound = new Audio('/sounds/synthwaveAmbience.mp3')
 
 export default function Interface() {
     const { isSoundOn, toggleSounds } = useSoundsStore()
-    const { scene, started, sceneToMain, setNotStarted } = useScenesStore()
+    const { scene, started, sceneToMain } = useScenesStore()
     const { t } = useTranslation()
 
     useEffect(() => {

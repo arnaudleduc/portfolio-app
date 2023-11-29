@@ -1,8 +1,8 @@
 import { useProgress } from '@react-three/drei'
-import '../style/loading-screen.css'
 import useScenesStore from '../stores/useScenes'
 import { useTranslation } from 'react-i18next'
 
+import '../style/loading-screen.css'
 
 export default function LoadingScreen({ scene }) {
     const { progress } = useProgress()

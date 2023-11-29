@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react"
-import { useGLTF, shaderMaterial, useTexture, useAnimations } from "@react-three/drei"
-import { extend, useFrame, useThree } from "@react-three/fiber"
+import { useEffect, useRef, useState } from "react"
+import { useGLTF, shaderMaterial, useAnimations } from "@react-three/drei"
+import { extend, useFrame } from "@react-three/fiber"
 import * as THREE from 'three'
 
 import neonMuralVertexShader from '../shaders/ArcadeMuralNeons/vertex.glsl'

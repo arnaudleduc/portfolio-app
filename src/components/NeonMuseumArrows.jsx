@@ -1,7 +1,7 @@
-import { useGLTF } from '@react-three/drei'
 import { useEffect, useState } from 'react'
+import { useGLTF } from '@react-three/drei'
 
-export default function NeonMuseumArrows(props) {
+export default function NeonMuseumArrows() {
     const { nodes } = useGLTF('models/Scene1/neonMuseumArrows.glb')
     const neonArrowsEmissiveIntensity = 35.30
 
@@ -39,7 +39,7 @@ export default function NeonMuseumArrows(props) {
     }, [arrowPart1, arrowPart2, arrowPart3])
 
     return (
-        <group {...props} dispose={null}>
+        <group dispose={null}>
             <mesh
                 geometry={nodes.museumNeonArrow3.geometry}
                 position={nodes.museumNeonArrow3.position}

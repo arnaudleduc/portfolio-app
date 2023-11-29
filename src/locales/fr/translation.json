@@ -35,5 +35,9 @@
     "devSkill": "Compétences Dev",
     "experienced": "Expérimenté",
     "intermediate": "Intermédiaire",
-    "novice": "Novice"
+    "novice": "Novice",
+
+    "oops": "Oups !",
+    "error": "Désolé, une erreur est survenue",
+    "backToMain": "Page principale"
 }

@@ -48,8 +48,8 @@ export default function Experiences() {
                             <p className="experiences-detail">Toulouse, Occitanie, France</p>
                         </div>
                     </div>
-
                 </div>
+                
                 <div className="experiences-infos experiences-formation">
                     <h2 className="experiences-subtitle">{t("education")}</h2>
 
@@ -84,7 +84,6 @@ export default function Experiences() {
 
                         <h2 className="experiences-subtitle experiences-back">{t("return")}</h2>
                     </div>
-
                 </div>
             </div>
 

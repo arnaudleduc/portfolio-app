@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react"
-import { SpotLight, useHelper } from "@react-three/drei"
-import * as THREE from 'three'
+import { SpotLight } from "@react-three/drei"
 
 const SPOTLIGHT_INTENSITY = 800
 
@@ -131,7 +130,6 @@ export default function VolumetricSpotlight(props) {
                     anglePower={10}
                     intensity={300}
                     opacity={.5}
-                    // volumetric={false}
                     {...props}
                 />
                 <SpotLight
@@ -145,11 +143,9 @@ export default function VolumetricSpotlight(props) {
                     anglePower={10}
                     intensity={800}
                     opacity={.5}
-                    // volumetric={false}
                     {...props}
                 />
             </group>
-
         </>
     )
 }

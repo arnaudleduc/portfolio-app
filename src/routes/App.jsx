@@ -1,13 +1,14 @@
-import { Suspense, useEffect, useState } from 'react'
+import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
+import { Environment } from '@react-three/drei'
+// import { Perf } from 'r3f-perf'
 import Scene1Street from '../scenes/Scene1Street'
 import Scene2Museum from '../scenes/Scene2Museum'
 import Scene3Arcade from '../scenes/Scene3Arcade'
-import { Environment, OrbitControls } from '@react-three/drei'
-import { Perf } from 'r3f-perf'
+
 import LoadingScreen from '../components/LoadingScreen'
-import useSoundsStore from '../stores/useSounds'
 import Interface from '../components/Interface'
+
 import useScenesStore from '../stores/useScenes'
 
 export default function App() {
@@ -19,10 +20,9 @@ export default function App() {
                 <Canvas
                     shadows
                 >
-
-                    <Perf
+                    {/* <Perf
                         position='top-left'
-                    />
+                    /> */}
                     {displayScene1(started)}
                 </Canvas>
                 <Interface />
@@ -35,10 +35,9 @@ export default function App() {
                 <Canvas
                     shadows
                 >
-
-                    <Perf
+                    {/* <Perf
                         position='top-left'
-                    />
+                    /> */}
                     {displayScene2()}
                 </Canvas>
                 <Interface />

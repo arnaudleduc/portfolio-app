@@ -1,13 +1,12 @@
-import React, { useRef } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 
-export default function MeshGroup1(props) {
+export default function MeshGroup1() {
     const { nodes } = useGLTF('models/Scene1/mesh1.glb')
     const bakedTexture = useTexture('textures/bakedMesh1.jpg')
     bakedTexture.flipY = false
 
     return (
-        <group {...props} dispose={null}>
+        <group dispose={null}>
             <mesh
                 geometry={nodes.boardZDK.geometry}
                 position={nodes.boardZDK.position}

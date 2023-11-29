@@ -1,5 +1,5 @@
-import { useGLTF } from "@react-three/drei"
 import { useRef } from "react"
+import { useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 
 import useScenesStore from "../stores/useScenes"
@@ -7,7 +7,7 @@ import useScenesStore from "../stores/useScenes"
 export default function NavigationArrowsIn(props) {
     const arcadeArrow = useRef()
     const museumArrow = useRef()
-    const { started, sceneToArcade, sceneToMuseum, setNotStarted } = useScenesStore()
+    const { sceneToArcade, sceneToMuseum, setNotStarted } = useScenesStore()
     const { nodes } = useGLTF("/models/Scene1/arrow.glb")
 
     useFrame((state) => {
@@ -75,7 +75,6 @@ export default function NavigationArrowsIn(props) {
             />
         </group>
     )
-
 }
 
 useGLTF.preload("/models/Scene1/arrow.glb")

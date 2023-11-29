@@ -1,6 +1,6 @@
-import '../style/contact.css'
-
 import { useTranslation } from 'react-i18next'
+
+import '../style/contact.css'
 
 export default function Contact() {
     const { t } = useTranslation()

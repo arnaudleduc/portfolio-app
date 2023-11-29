@@ -1,10 +1,10 @@
-import { useRef, useState } from "react"
-import { useGLTF, useHelper, useTexture, Sparkles, Html } from "@react-three/drei"
+import { useState } from "react"
+import { useGLTF, useTexture, Sparkles, Html } from "@react-three/drei"
 import VolumetricSpotlight from "./VolumetricSpotLight"
 import { useTranslation } from "react-i18next"
-import * as THREE from 'three'
 
 import '../style/question-marks.css'
+
 import useScenesStore from "../stores/useScenes"
 
 export default function Museum() {

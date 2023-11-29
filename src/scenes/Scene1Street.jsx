@@ -1,6 +1,6 @@
-import { Bloom, EffectComposer } from "@react-three/postprocessing"
 import { useEffect, useRef } from "react"
-import { OrbitControls, PerspectiveCamera, useHelper } from "@react-three/drei"
+import { PerspectiveCamera } from "@react-three/drei"
+import { Bloom, EffectComposer } from "@react-three/postprocessing"
 
 import MeshGroup1 from '../components/MeshGroup1'
 import MeshGroup2 from '../components/MeshGroup2'
@@ -16,9 +16,6 @@ import Puddle from "../components/Puddle"
 import IFrame from "../components/IFrame"
 import PaintIcons from "../components/PaintIcons"
 import Arrow from "../components/NavigationArrowsIn"
-
-import ParallaxEffect from "../utils/ParallaxEffect"
-
 
 export default function Scene1Street({ started }) {
     const mainCamera = useRef()
@@ -48,8 +45,7 @@ export default function Scene1Street({ started }) {
                     luminanceThreshold={8}
                 />
             </EffectComposer >
-            <ParallaxEffect cameraGroup={cameraGroup}/>
-            < MeshGroup1 />
+            <MeshGroup1 />
             <BoardZDK />
             <NeonArcade />
             <MeshGroup2 />
@@ -66,6 +62,5 @@ export default function Scene1Street({ started }) {
                 scale={0.25}
             />
         </>
-
     )
 }

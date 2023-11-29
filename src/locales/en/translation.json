@@ -36,5 +36,9 @@
     "devSkills": "Dev Skills",
     "experienced": "Experienced",
     "intermediate": "Intermediate",
-    "novice": "Novice"
+    "novice": "Novice",
+
+    "oops": "Oops !",
+    "error": "Sorry, an unexpected error has occured",
+    "backToMain": "Go back to main page"
 }

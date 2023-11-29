@@ -8,8 +8,6 @@ export default function BoardZDK(props) {
     return (
         <group {...props} dispose={null}>
             <mesh
-
-
                 geometry={nodes.boardZDKText.geometry}
                 position={nodes.boardZDKText.position}
             >

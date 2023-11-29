@@ -1,22 +1,22 @@
-import React, { useRef } from 'react'
-import { useGLTF, useTexture, useAnimations } from '@react-three/drei'
+import { useRef } from 'react'
 import { useEffect } from 'react'
+import { useGLTF, useTexture, useAnimations } from '@react-three/drei'
 
-export default function MeshGroup3(props) {
+export default function MeshGroup3() {
     const bladesGroup = useRef()
 
     const { nodes } = useGLTF('models/Scene1/mesh3.glb')
     const blades = useGLTF('/models/Scene1/bladesClim.glb')
 
     const { actions } = useAnimations(blades.animations, bladesGroup)
-    
+
     useEffect(() => {
         const blade1Animation = actions['PalesAction']
         const blade2Animation = actions['PalesAction.001']
-        const blade3Animation = actions['PalesAction.002']
+        
         blade1Animation.play()
         blade2Animation.play()
-        blade3Animation.play()
+
     }, [])
 
     const bakedTexture = useTexture('textures/bakedMesh3.jpg')
@@ -26,10 +26,8 @@ export default function MeshGroup3(props) {
 
     return (
         <>
-            <group {...props} dispose={null}>
+            <group dispose={null}>
                 <mesh
-                    
-                    
                     geometry={nodes.bin.geometry}
                     position={nodes.bin.position}
                 >
@@ -37,29 +35,11 @@ export default function MeshGroup3(props) {
                         map={bakedTexture}
                     />
                 </mesh>
-                <mesh>
-
-                </mesh>
             </group>
-            <group ref={bladesGroup} {...props} dispose={null}>
+            <group ref={bladesGroup} dispose={null}>
                 <group name="Scene">
                     <mesh
-                        name="airConditioner1Blades"
-                        
-                        
-                        geometry={blades.nodes.airConditioner1Blades.geometry}
-                        material={blades.nodes.airConditioner1Blades.material}
-                        position={blades.nodes.airConditioner1Blades.position}
-                    >
-                        <meshStandardMaterial
-                            map={bakedBladesTexture}
-                            toneMapped={false}
-                        />
-                    </mesh>
-                    <mesh
                         name="airConditioner2Blades"
-                        
-                        
                         geometry={blades.nodes.airConditioner2Blades.geometry}
                         material={blades.nodes.airConditioner2Blades.material}
                         position={blades.nodes.airConditioner2Blades.position}
@@ -71,8 +51,6 @@ export default function MeshGroup3(props) {
                     </mesh>
                     <mesh
                         name="airConditioner3Blades"
-                        
-                        
                         geometry={blades.nodes.airConditioner3Blades.geometry}
                         material={blades.nodes.airConditioner3Blades.material}
                         position={blades.nodes.airConditioner3Blades.position}
@@ -85,7 +63,6 @@ export default function MeshGroup3(props) {
                 </group>
             </group>
         </>
-
     )
 }
 

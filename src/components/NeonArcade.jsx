@@ -1,4 +1,4 @@
-import { useGLTF, useTexture } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 
 export default function NeonArcade(props) {
     const neonArcadeEN = useGLTF('models/Scene1/neonArcadeEN.glb')
@@ -7,8 +7,6 @@ export default function NeonArcade(props) {
     return (
         <group {...props} dispose={null}>
             <mesh
-                
-                
                 geometry={neonArcadeEN.nodes.boardArcadeTextEnglish.geometry}
                 position={neonArcadeEN.nodes.boardArcadeTextEnglish.position}
             >
@@ -18,9 +16,7 @@ export default function NeonArcade(props) {
                     emissiveIntensity={12.71}
                 />
             </mesh>
-            <mesh
-                
-                
+            <mesh      
                 geometry={neonArcadeJP.nodes.boardArcadeTextJapanese.geometry}
                 position={neonArcadeJP.nodes.boardArcadeTextJapanese.position}
             >

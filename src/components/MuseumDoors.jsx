@@ -1,14 +1,11 @@
-import React, { useRef } from 'react'
-import { useGLTF, MeshReflectorMaterial } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 
-export default function MuseumDoors(props) {
+export default function MuseumDoors() {
   const { nodes } = useGLTF('models/Scene1/museumDoors.glb')
 
   return (
-    <group {...props} dispose={null}>
+    <group dispose={null}>
       <mesh
-        
-        
         geometry={nodes.museumDoors.geometry}
         position={nodes.museumDoors.position}
       >

@@ -1,19 +1,19 @@
-import { useRef, useEffect, useState } from "react"
-import { OrbitControls, useHelper, PerspectiveCamera, Sparkles } from "@react-three/drei"
+import { useRef, useState } from "react"
+import { PerspectiveCamera, Sparkles } from "@react-three/drei"
+// import { Perf } from "r3f-perf"
 import { EffectComposer, Bloom } from "@react-three/postprocessing"
-import * as THREE from 'three'
 
 import Arcade from "../components/Arcade"
 import IFrame from "../components/IFrame"
+
 import useArcadeStore from "../stores/useArcade"
 import useScenesStore from "../stores/useScenes"
-import { Perf } from "r3f-perf"
+
 
 export default function Scene3Arcade() {
     const mainCamera = useRef()
     const cameraGroup = useRef()
     const sparkles = useRef()
-    const { isCameraZoomed } = useArcadeStore()
     const { started } = useScenesStore()
     const [ambienceColor, setAmbienceColor] = useState('#fd3777')
     // useHelper(mainCamera, THREE.CameraHelper, 'red')
@@ -33,7 +33,6 @@ export default function Scene3Arcade() {
                     position={[0, 30, 45]}
                 />
             </group>
-            {/* <OrbitControls /> */}
 
             <EffectComposer>
                 <Bloom
@@ -43,7 +42,6 @@ export default function Scene3Arcade() {
             </EffectComposer >
             <directionalLight
                 color={ambienceColor}
-                // color={'#2de2e6'}
                 intensity={8}
             />
             <Sparkles
