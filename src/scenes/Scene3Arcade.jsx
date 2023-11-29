@@ -20,9 +20,9 @@ export default function Scene3Arcade() {
     
     return (
         <>
-            <Perf
+            {/* <Perf
                 position="top-left"
-            />
+            /> */}
             <group ref={cameraGroup}>
                 <PerspectiveCamera
                     ref={mainCamera}
