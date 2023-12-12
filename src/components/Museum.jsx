@@ -87,114 +87,96 @@ const Decoration = () => {
   const { nodes, materials } = useGLTF("/models/Scene2/decorationMeshes.glb");
   return (
     <group dispose={null}>
-      <group position={[-3.05, 5.351, -17.969]}>
+      <group position={[9.713, 4.005, -17.854]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube043.geometry}
-          material={materials.rockMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_1.geometry}
-          material={materials.treeMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_2.geometry}
-          material={materials.fundationMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_3.geometry}
-          material={materials.doorKnobMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_4.geometry}
-          material={materials.Verre}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_5.geometry}
-          material={materials.Metal}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_6.geometry}
-          material={materials.Gomme}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_7.geometry}
-          material={materials.Carrosserie}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_8.geometry}
-          material={materials.Toit}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_9.geometry}
-          material={materials.pharesArrieres}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_10.geometry}
-          material={materials.Material}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube043_11.geometry}
+          geometry={nodes.Plane005.geometry}
           material={materials.BodyMaterial}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube043_12.geometry}
+          geometry={nodes.Plane005_1.geometry}
           material={materials.GlassesMaterial}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube043_13.geometry}
+          geometry={nodes.Plane005_2.geometry}
           material={materials.ShadesMaterial}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube043_14.geometry}
+          geometry={nodes.Plane005_3.geometry}
           material={materials.ShoeMaterial}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube043_15.geometry}
+          geometry={nodes.Plane005_4.geometry}
           material={materials.HandMaterial}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube043_16.geometry}
+          geometry={nodes.Plane005_5.geometry}
           material={materials.ArmMaterial}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube043_17.geometry}
+          geometry={nodes.Plane005_6.geometry}
           material={materials.HeadMaterial}
+        />
+      </group>
+      <group
+        position={[4.158, 4.171, -18.077]}
+        rotation={[-1.701, -0.287, 1.136]}
+        scale={-0.001}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012.geometry}
+          material={materials.Carrosserie}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012_1.geometry}
+          material={materials["Metal.008"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012_2.geometry}
+          material={materials["Gomme.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012_3.geometry}
+          material={materials["Verre.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012_4.geometry}
+          material={materials["Toit.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012_5.geometry}
+          material={materials["Carrosserie.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012_6.geometry}
+          material={materials["Material.001"]}
         />
       </group>
     </group>
