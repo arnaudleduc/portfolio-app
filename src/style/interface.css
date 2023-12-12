@@ -1,30 +1,30 @@
 @font-face {
-    font-family: FNA;
-    src: url(/fonts/Film_Noir_Adventure.ttf);
+  font-family: FNA;
+  src: url(/fonts/Film_Noir_Adventure.ttf);
 }
 
 .sound-bars-container {
-    position: absolute;
-    width: 40px;
-    height: 70px;
-    bottom: 2%;
-    right: 2%;
-    display: flex;
-    justify-content: space-around;
-    cursor: pointer;
-    user-select: none;
+  position: absolute;
+  width: 40px;
+  height: 70px;
+  bottom: 2%;
+  right: 2%;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  user-select: none;
 }
 
 .sound-bars-container * {
-    margin-left: 1px;
+  margin-left: 1px;
 }
 
 .sound-bars {
-    width: 3px;
-    height: 70px;
-    transition: height 1s;
-    background: white;
-    align-self: end;
+  width: 3px;
+  height: 70px;
+  transition: height 1s;
+  background: white;
+  align-self: end;
 }
 
 /* .interface-arrow-icon-container {
@@ -32,34 +32,34 @@
 } */
 
 .interface-arrow {
-    position: absolute;
-    bottom: 3%;
-    left: 1%;
-    pointer-events: auto;
-    cursor: pointer;
-    user-select: none;
+  position: absolute;
+  bottom: 3%;
+  left: 1%;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
 }
 
 .interface-arrow-icon-container {
-    position: relative;
+  position: relative;
 }
 
 .interface-arrow-icon {
-    width: 100px;
+  width: 100px;
 }
 
 .interface-arrow-text-fr {
-    position: absolute;
-    bottom: 6px;
-    left: 16px;
-    font-family: FNA;
-    font-size: 20px;
+  position: absolute;
+  bottom: 6px;
+  left: 16px;
+  font-family: FNA;
+  font-size: 120%;
 }
 
 .interface-arrow-text-en {
-    position: absolute;
-    bottom: 6px;
-    left: 30px;
-    font-family: FNA;
-    font-size: 20px;
+  position: absolute;
+  bottom: 6px;
+  left: 30px;
+  font-family: FNA;
+  font-size: 120%;
 }
