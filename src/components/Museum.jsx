@@ -85,54 +85,11 @@ const MuseumMesh = () => {
 
 const Decoration = () => {
   const { nodes, materials } = useGLTF("/models/Scene2/decorationMeshes.glb");
+
   return (
     <group dispose={null}>
-      <group position={[9.713, 4.005, -17.854]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane005.geometry}
-          material={materials.BodyMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane005_1.geometry}
-          material={materials.GlassesMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane005_2.geometry}
-          material={materials.ShadesMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane005_3.geometry}
-          material={materials.ShoeMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane005_4.geometry}
-          material={materials.HandMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane005_5.geometry}
-          material={materials.ArmMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane005_6.geometry}
-          material={materials.HeadMaterial}
-        />
-      </group>
       <group
-        position={[4.158, 4.171, -18.077]}
+        position={[-2.39, 4.171, -18.077]}
         rotation={[-1.701, -0.287, 1.136]}
         scale={-0.001}
       >
@@ -177,6 +134,96 @@ const Decoration = () => {
           receiveShadow
           geometry={nodes.Cylinder012_6.geometry}
           material={materials["Material.001"]}
+        />
+      </group>
+      <group position={[3.519, 4.005, -17.854]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane005.geometry}
+          material={materials.BodyMaterial}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane005_1.geometry}
+          material={materials.GlassesMaterial}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane005_2.geometry}
+          material={materials.ShadesMaterial}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane005_3.geometry}
+          material={materials.ShoeMaterial}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane005_4.geometry}
+          material={materials.HandMaterial}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane005_5.geometry}
+          material={materials.ArmMaterial}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane005_6.geometry}
+          material={materials.HeadMaterial}
+        />
+      </group>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.lens.geometry}
+        position={[10.895, 5.887, -17.393]}
+        rotation={[0, 1.571, 0]}
+        scale={4.368}
+      >
+        <meshStandardMaterial color={"black"} />
+      </mesh>
+      <group
+        position={[9.949, 5.458, -17.963]}
+        rotation={[0, 1.571, 0]}
+        scale={4.321}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube059.geometry}
+          material={materials.threePlasticWhite}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube059_1.geometry}
+          material={materials.threeLedBlue}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube059_2.geometry}
+          material={materials.threePlasticBlack}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube059_3.geometry}
+          material={materials.threeMetal}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube059_4.geometry}
+          material={materials.threePlasticRed}
         />
       </group>
     </group>
