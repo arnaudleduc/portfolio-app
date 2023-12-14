@@ -1,0 +1,9 @@
+.videos {
+  opacity: 0;
+}
+
+.videos-visible {
+  opacity: 1;
+  transition: opacity 5s;
+  user-select: none;
+}

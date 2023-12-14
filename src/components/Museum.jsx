@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import { useState } from "react";
 import { useGLTF, useTexture, Sparkles, Html } from "@react-three/drei";
@@ -5,6 +6,7 @@ import VolumetricSpotlight from "./VolumetricSpotLight";
 import { useTranslation } from "react-i18next";
 
 import "../style/question-marks.css";
+import "../style/paintings.css";
 
 import useScenesStore from "../stores/useScenes";
 
@@ -277,6 +279,7 @@ const Paintings = () => {
   const abandonedHouseTexture = useTexture("textures/abandonedHouse.png");
   const projectTextureFR = useTexture("textures/projetFR.jpg");
   const projectTextureEN = useTexture("textures/projetEN.jpg");
+  const { started } = useScenesStore();
 
   const onPaintingClick = () => {
     window.open("https://abandoned-house.vercel.app", "_blank");
@@ -284,6 +287,17 @@ const Paintings = () => {
 
   return (
     <group>
+      {/* Project Template */}
+      <mesh position={[-17.9, 7.9, 4.6]} rotation-y={Math.PI * 0.5}>
+        <planeGeometry args={[4.7, 4.7]} />
+        <meshBasicMaterial
+          map={
+            navigator.language === "en" ? projectTextureEN : projectTextureFR
+          }
+        />
+      </mesh>
+
+      {/* Abandoned House Project */}
       <mesh
         position={[-17.9, 7.9, -5]}
         rotation-y={Math.PI * 0.5}
@@ -298,14 +312,30 @@ const Paintings = () => {
         <planeGeometry args={[8.2, 5]} />
         <meshBasicMaterial map={abandonedHouseTexture} />
       </mesh>
-      <mesh position={[-17.9, 7.9, 4.6]} rotation-y={Math.PI * 0.5}>
-        <planeGeometry args={[4.7, 4.7]} />
-        <meshBasicMaterial
-          map={
-            navigator.language === "en" ? projectTextureEN : projectTextureFR
-          }
-        />
-      </mesh>
+
+      {/* Robotic Planet */}
+      <Html
+        transform
+        wrapperClass={started ? "videos-visible" : "videos"}
+        distanceFactor={2.4}
+        position={[-17.9, 10.25, 11.8]}
+        rotation-y={Math.PI * 0.5}
+      >
+        <video width={640} height={360} autoPlay loop>
+          <source src="/videos/BasicBotAnim.mp4" type="video/mp4" />
+        </video>
+      </Html>
+      <Html
+        transform
+        wrapperClass={started ? "videos-visible" : "videos"}
+        distanceFactor={2.1}
+        position={[-17.9, 6.4, 11.8]}
+        rotation-y={Math.PI * 0.5}
+      >
+        <video width={640} height={640} autoPlay loop muted>
+          <source src="/videos/FishBotAnim.mp4" type="video/mp4" />
+        </video>
+      </Html>
     </group>
   );
 };

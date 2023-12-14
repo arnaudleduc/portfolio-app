@@ -1,31 +1,35 @@
-import { Html } from "@react-three/drei"
+/* eslint-disable react/prop-types */
+import { Html } from "@react-three/drei";
 
-import '../style/iframe.css'
+import useScenesStore from "../stores/useScenes";
 
-export default function IFrame({ started, page }) {
-    if (page === "contact") {
-        return (
-            <Html
-                transform
-                wrapperClass={started ? "contact-page-visible" : "contact-page"}
-                distanceFactor={2}
-                position={[-0.24, 6.77, -4.52]}
-            >
-                <iframe src="/contact" />
-            </Html>
-        )
-    } else if (page === "experiences") {
-        return (
-            <Html
-                transform
-                wrapperClass={started ? "experiences-page-visible" : "experiences-page"}
-                distanceFactor={1.5}
-                position={[0, 7.25, -21.78]}
-                rotation-x={-Math.PI * 0.09}
-            >
-                <iframe src="/experiences" />
-            </Html>
-        )
-    }
-    
+import "../style/iframe.css";
+
+export default function IFrame({ page }) {
+  const { started } = useScenesStore();
+
+  if (page === "contact") {
+    return (
+      <Html
+        transform
+        wrapperClass={started ? "contact-page-visible" : "contact-page"}
+        distanceFactor={2}
+        position={[-0.24, 6.77, -4.52]}
+      >
+        <iframe src="/contact" />
+      </Html>
+    );
+  } else if (page === "experiences") {
+    return (
+      <Html
+        transform
+        wrapperClass={started ? "experiences-page-visible" : "experiences-page"}
+        distanceFactor={1.5}
+        position={[0, 7.25, -21.78]}
+        rotation-x={-Math.PI * 0.09}
+      >
+        <iframe src="/experiences" />
+      </Html>
+    );
+  }
 }
