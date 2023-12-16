@@ -1,35 +1,40 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from './routes/App'
-import Contact from './routes/Contact'
-import Experiences from './routes/Experiences'
+import App from "./routes/App";
+import Contact from "./routes/Contact";
+import Experiences from "./routes/Experiences";
+import ClassicDisplay from "./routes/ClassicDisplay";
 
-import ErrorPage from './ErrorPage'
+import ErrorPage from "./ErrorPage";
 
-import './i18n'
+import "./i18n";
 
-import './style/main.css'
+import "./style/main.css";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {
     path: "/contact",
-    element: <Contact />
+    element: <Contact />,
   },
   {
     path: "/experiences",
-    element: <Experiences />
-  }
-])
+    element: <Experiences />,
+  },
+  {
+    path: "/html",
+    element: <ClassicDisplay />,
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
-)
+);

@@ -10,8 +10,8 @@ export default function LoadingScreen({ scene }) {
   const { started, setStarted } = useScenesStore();
   const { t } = useTranslation();
 
-  const startExperience = () => {
-    setStarted();
+  const openClassicView = () => {
+    window.open("https://abandoned-house.vercel.app");
   };
 
   let content;
@@ -21,13 +21,23 @@ export default function LoadingScreen({ scene }) {
         <h1 className="loading-screen-title">ZDK WEB AGENCY</h1>
         <h2 className="loading-screen-subtitle">{t("by")} Arnaud Leduc</h2>
         {!started && (
-          <button
-            className="loading-screen-button"
-            disabled={progress < 100}
-            onClick={startExperience}
-          >
-            {t("start")}
-          </button>
+          <div className="loading-screen-button-container">
+            <button
+              className="loading-screen-button"
+              disabled={progress < 100}
+              onClick={setStarted}
+            >
+              {t("start")}
+            </button>
+
+            <button
+              className="loading-screen-button"
+              disabled={progress < 100}
+              onClick={openClassicView}
+            >
+              {t("mobile")}
+            </button>
+          </div>
         )}
       </div>
     );
@@ -39,7 +49,7 @@ export default function LoadingScreen({ scene }) {
           <button
             className="loading-screen-button"
             disabled={progress < 100}
-            onClick={startExperience}
+            onClick={setStarted}
           >
             {t("click")}
           </button>
@@ -54,7 +64,7 @@ export default function LoadingScreen({ scene }) {
           <button
             className="loading-screen-button"
             disabled={progress < 100}
-            onClick={startExperience}
+            onClick={setStarted}
           >
             {t("click")}
           </button>

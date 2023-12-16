@@ -11,11 +11,15 @@ import LoadingScreen from "../components/LoadingScreen";
 import Interface from "../components/Interface";
 
 import useScenesStore from "../stores/useScenes";
+import ClassicDisplay from "./ClassicDisplay";
 
 export default function App() {
   const { scene } = useScenesStore();
+  const isUserOnMobile = window.innerWidth <= 768 ? true : false;
 
-  if (scene === 1) {
+  console.log(isUserOnMobile);
+
+  if (scene === 1 && !isUserOnMobile) {
     return (
       <>
         <Canvas shadows>
@@ -28,7 +32,7 @@ export default function App() {
         <LoadingScreen scene="main" />
       </>
     );
-  } else if (scene === 2) {
+  } else if (scene === 2 && !isUserOnMobile) {
     return (
       <>
         <Canvas shadows>
@@ -41,7 +45,7 @@ export default function App() {
         <LoadingScreen scene="museum" />
       </>
     );
-  } else {
+  } else if (scene === 3 && !isUserOnMobile) {
     return (
       <>
         <Canvas shadows>
@@ -54,6 +58,8 @@ export default function App() {
         <LoadingScreen scene="arcade" />
       </>
     );
+  } else {
+    return <ClassicDisplay />;
   }
 }
 

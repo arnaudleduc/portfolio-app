@@ -1,0 +1,125 @@
+@font-face {
+  font-family: FNA;
+  src: url(/fonts/Film_Noir_Adventure.ttf);
+}
+
+.classic-display {
+  height: 100vh;
+  font-family: FNA;
+  color: rgb(0, 108, 112);
+  text-shadow: 0px 1px 1px rgb(98, 255, 67);
+  background-color: rgb(255, 255, 255);
+  padding: 4% 7%;
+  @media screen and (min-width: 769px) {
+    padding: 4% 30%;
+  }
+}
+
+.classic-display h1,
+.classic-display h2,
+.classic-display h3,
+.classic-display h4,
+.classic-display-list-container,
+.classic-display-list-container li,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.classic-display ul li {
+  list-style-type: none;
+}
+
+.classic-display h1 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  @media screen and (min-width: 769px) {
+    font-size: 40px;
+  }
+}
+
+.classic-display h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  @media screen and (min-width: 769px) {
+    font-size: 36px;
+  }
+}
+
+.classic-display h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  @media screen and (min-width: 769px) {
+    font-size: 36px;
+  }
+}
+
+.classic-display h4 {
+  font-size: 13px;
+  margin-bottom: 8px;
+  @media screen and (min-width: 769px) {
+    font-size: 26px;
+  }
+}
+
+.classic-display p {
+  font-size: 13px;
+  margin-bottom: 8px;
+  text-align: right;
+  @media screen and (min-width: 769px) {
+    font-size: 26px;
+  }
+}
+
+.classic-display a {
+  font-size: 13px;
+  padding: 6px 14px;
+  border: 2px solid rgb(0, 108, 112);
+  border-radius: 20px;
+  @media screen and (min-width: 769px) {
+    font-size: 26px;
+    border: 3px solid rgb(0, 108, 112);
+    border-radius: 50px;
+  }
+}
+
+.classic-display a:hover {
+  background-color: rgb(0, 108, 112);
+  border: 2px solid rgb(0, 108, 112);
+  border-radius: 20px;
+  color: white;
+  @media screen and (min-width: 769px) {
+    font-size: 26px;
+    border: 3px solid rgb(0, 108, 112);
+    border-radius: 50px;
+  }
+}
+
+.classic-display-list-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.classic-display-list-container li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.immersive-websites {
+  flex-direction: column;
+  align-items: center;
+}
+
+.immersive-websites li:last-child {
+  margin-top: 10px;
+}
+
+h4 span {
+  opacity: 0.5;
+}
+p span {
+  padding: 0 20px;
+  font-size: 15px;
+}
