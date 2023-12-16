@@ -11,7 +11,7 @@ export default function LoadingScreen({ scene }) {
   const { t } = useTranslation();
 
   const openClassicView = () => {
-    window.open("https://abandoned-house.vercel.app");
+    window.open("/html");
   };
 
   let content;
@@ -49,7 +49,7 @@ export default function LoadingScreen({ scene }) {
           <button
             className="loading-screen-button"
             disabled={progress < 100}
-            onClick={setStarted}
+            onClick={openClassicView}
           >
             {t("click")}
           </button>
