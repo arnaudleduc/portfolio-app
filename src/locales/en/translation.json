@@ -40,5 +40,14 @@
 
   "oops": "Oops !",
   "error": "Sorry, an unexpected error has occured",
-  "backToMain": "Go back to main page"
+  "backToMain": "Go back to main page",
+
+  "pitch": "Creative developer and 3D graphic designer living in Agen, France",
+  "mail": "Email Address",
+  "freelance": "Freelancer",
+  "at": "at",
+  "projects": "Projects",
+  "immersive": "Immersive Websites",
+  "common": "Common websites",
+  "design": "Graphic Design"
 }

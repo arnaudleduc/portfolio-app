@@ -30,7 +30,7 @@ p {
 }
 
 .classic-display h1 {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 8px;
   @media screen and (min-width: 769px) {
     font-size: 40px;
@@ -38,7 +38,7 @@ p {
 }
 
 .classic-display h2 {
-  font-size: 18px;
+  font-size: 25px;
   margin-bottom: 8px;
   @media screen and (min-width: 769px) {
     font-size: 36px;
@@ -54,7 +54,7 @@ p {
 }
 
 .classic-display h4 {
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 8px;
   @media screen and (min-width: 769px) {
     font-size: 26px;
@@ -62,16 +62,15 @@ p {
 }
 
 .classic-display p {
-  font-size: 13px;
-  margin-bottom: 8px;
-  text-align: right;
+  font-size: 12px;
+  margin-bottom: 20px;
   @media screen and (min-width: 769px) {
     font-size: 26px;
   }
 }
 
 .classic-display a {
-  font-size: 13px;
+  font-size: 14px;
   padding: 6px 14px;
   border: 2px solid rgb(0, 108, 112);
   border-radius: 20px;
@@ -95,8 +94,10 @@ p {
 }
 
 .classic-display-list-container {
+  width: 90%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 0;
   margin-bottom: 10px;
 }
@@ -104,21 +105,18 @@ p {
 .classic-display-list-container li {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.immersive-websites {
+/* .immersive-websites {
   flex-direction: column;
   align-items: center;
-}
-
-.immersive-websites li:last-child {
-  margin-top: 10px;
-}
+} */
 
 h4 span {
   opacity: 0.5;
 }
 p span {
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 15px;
 }

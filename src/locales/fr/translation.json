@@ -40,5 +40,14 @@
 
   "oops": "Oups !",
   "error": "Désolé, une erreur est survenue",
-  "backToMain": "Page principale"
+  "backToMain": "Page principale",
+
+  "pitch": "Développeur créatif et infographiste 3D basé à Agen, France",
+  "mail": "Adresse e-mail",
+  "freelance": "Freelance",
+  "at": "chez",
+  "projects": "Projets",
+  "immersive": "Sites immersifs",
+  "common": "Sites classiques",
+  "design": "Design graphique"
 }
