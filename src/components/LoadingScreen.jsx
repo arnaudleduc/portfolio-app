@@ -49,7 +49,7 @@ export default function LoadingScreen({ scene }) {
           <button
             className="loading-screen-button"
             disabled={progress < 100}
-            onClick={openClassicView}
+            onClick={setStarted}
           >
             {t("click")}
           </button>
